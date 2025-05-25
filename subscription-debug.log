@@ -1,0 +1,924 @@
+サブスクリプション処理開始: 2025-05-09 21:48:17
+POST データ: {"action":"edel_square_process_subscription","nonce":"41ece78fb3","payment_token":"cnon:CA4SEBGjEsk2w_GhvgKzr5i-T9sYASgC","email":"info@edel.local","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+レスポンス: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u304c\u767b\u9332\u3055\u308c\u307e\u3057\u305f\u3002","subscription_id":"sub_test_1746827297","redirect_url":"https:\/\/edel.local","debug_info":"\u30c6\u30b9\u30c8\u5b9f\u88c5\u306e\u307f - \u5b9f\u969b\u306e\u51e6\u7406\u306f\u307e\u3060\u5b9f\u88c5\u3055\u308c\u3066\u3044\u307e\u305b\u3093"}
+サブスクリプション処理開始: 2025-05-09 21:59:35
+POST データ: {"action":"edel_square_process_subscription","nonce":"41ece78fb3","payment_token":"cnon:CA4SEJTfB5aecxax9grW48-TJZIYASgC","email":"info@edel.local","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_681e7ac7dec26, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 1
+顧客ID: GXN5049TRWZQZ4NTQ0NTJ4CM8W
+サブスクリプション処理開始: 2025-05-09 22:08:29
+POST データ: {"action":"edel_square_process_subscription","nonce":"41ece78fb3","payment_token":"cnon:CA4SENjlJofXfAeQo2gXsfx6DfIYASgC","email":"iinfo@edel.local","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=iinfo@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_681e7cdd7abea, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 2
+顧客ID: APZR0EGFZ404D1SQNQW3NQV3RW
+サブスクリプション処理開始: 2025-05-09 22:09:04
+POST データ: {"action":"edel_square_process_subscription","nonce":"41ece78fb3","payment_token":"cnon:CA4SENXN7THFG254nX_G-IE7pKUYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_681e7d00d7cf8, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 3
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+サブスクリプション処理開始: 2025-05-09 22:25:12
+POST データ: {"action":"edel_square_process_subscription","nonce":"41ece78fb3","payment_token":"cnon:CA4SEASAR6kv2u2IQZ_PpONfsLEYASgC","email":"infop@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=infop@edel-hearts.com
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_681e80c81ae5c, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 4
+エラー発生: 顧客情報の作成に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-09 22:26:00
+POST データ: {"action":"edel_square_process_subscription","nonce":"41ece78fb3","payment_token":"cnon:CA4SEJs_U7StuagEE32vh6jyMUEYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_681e80f8eab10, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 5
+エラー発生: 顧客情報の作成に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-09 22:50:07
+POST データ: {"action":"edel_square_process_subscription","nonce":"4decb216b4","payment_token":"cnon:CA4SENgdZR-moDJDBhi_pGnI4X8YASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既存ユーザー: ID=31
+ユーザーID: 31
+プラン作成: plan_681e869f66ff0, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 6
+エラー発生: 顧客情報の作成に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(207): do_action('wp_ajax_nopriv_...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-09 23:04:00
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SELBljTZX00BWweGPFXJqh0EYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e89e005eae, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 7
+サブスクリプション処理開始: 2025-05-09 23:11:30
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEGDVXqoV94RgWYvpmGEpi80YASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8ba2205d6, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 8
+サブスクリプション処理開始: 2025-05-09 23:12:52
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SENPsteHnv-nNCH-YkvYAkkYYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8bf4ba5be, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 9
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+サブスクリプション処理開始: 2025-05-09 23:16:51
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEJ663iGDslFvx2s77ouaJikYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8ce3084c6, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 10
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+サブスクリプション処理開始: 2025-05-09 23:19:21
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEL_b10AzJe1vtsB7K-K0E7kYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8d791ca2d, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 11
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+サブスクリプション処理開始: 2025-05-09 23:21:04
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEEneyugvNEO_ohKNCvAtFosYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8de02d053, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 12
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+カードID: ccof:CA4SEJB0Kxoe_6T3FUcZPCSJia4oAg
+カード保存結果: {"id":"ccof:CA4SEJB0Kxoe_6T3FUcZPCSJia4oAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"0ETJMF1G3QC7X05R16W9WJQEJW","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e8de12a994, 開始=2025-05-09 23:21:05, 次回請求=2025-05-23 23:21:05
+サブスクリプション処理開始: 2025-05-09 23:26:33
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEHRvJT0smFyG9SELZyBAhuQYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8f29c9ffc, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 13
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+サブスクリプション処理開始: 2025-05-09 23:29:09
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEJf-FkPPr3PJPez5H9oE4nEYASgC","email":"info@edel-hearts.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"14"}
+ユーザー登録処理開始: メール=info@edel-hearts.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e8fc53ad70, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 14
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+カードID: ccof:CA4SEA4pgOZlVvNgNP1zRwdF-GIoAg
+カード保存結果: {"card_id":"ccof:CA4SEA4pgOZlVvNgNP1zRwdF-GIoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEA4pgOZlVvNgNP1zRwdF-GIoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"0ETJMF1G3QC7X05R16W9WJQEJW","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e8fc69ff99, 開始=2025-05-09 23:29:10, 次回請求=2025-05-23 23:29:10
+サブスクリプション保存結果: 1
+メール通知処理開始: サブスクリプションID=sub_681e8fc69ff99, メール=info@edel-hearts.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681e8fc69ff99","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-09 23:35:15
+POST データ: {"action":"edel_square_process_subscription","nonce":"ba062839cd","payment_token":"cnon:CA4SEDYC50YdlgkOBs3LUXc3rmYYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=31
+ユーザーID: 31
+プラン作成: plan_681e9133a7921, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 15
+顧客ID: 0ETJMF1G3QC7X05R16W9WJQEJW
+カードID: ccof:CA4SEHFrfSetnnbJhq9P8LLoBdYoAg
+カード保存結果: {"card_id":"ccof:CA4SEHFrfSetnnbJhq9P8LLoBdYoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEHFrfSetnnbJhq9P8LLoBdYoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"0ETJMF1G3QC7X05R16W9WJQEJW","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e9134aa41a, 開始=2025-05-09 23:35:16, 次回請求=2025-06-09 23:35:16
+サブスクリプション保存結果: 2
+初回決済を実行
+サブスクリプション処理開始: 2025-05-09 23:37:15
+POST データ: {"action":"edel_square_process_subscription","nonce":"4decb216b4","payment_token":"cnon:CA4SEBWZn4SLpMftHDLTU8LVGYkYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+新規ユーザー作成: ID=33, メール=exhearts@gmail.com
+ユーザーID: 33
+プラン作成: plan_681e91ab175e9, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 16
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEEVV_riFwhRtNWOzYmHzcJYoAg
+カード保存結果: {"card_id":"ccof:CA4SEEVV_riFwhRtNWOzYmHzcJYoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEEVV_riFwhRtNWOzYmHzcJYoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e91ad0fb02, 開始=2025-05-09 23:37:17, 次回請求=2025-06-09 23:37:17
+サブスクリプション保存結果: 3
+初回決済を実行
+サブスクリプション処理開始: 2025-05-10 00:08:51
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEHv68iLIiboE1FGTVp1ZaSEYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681e99138073f, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 17
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEGT2VB-mOkRGdHG42YubacgoAg
+カード保存結果: {"card_id":"ccof:CA4SEGT2VB-mOkRGdHG42YubacgoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEGT2VB-mOkRGdHG42YubacgoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e99147e04a, 開始=2025-05-10 00:08:52, 次回請求=2025-06-10 00:08:52
+サブスクリプション保存結果: 4
+初回決済を実行
+初回決済結果: false
+エラー発生: 初回決済に失敗しました: 不明なエラー
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-10 00:14:15
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEPJTXvXQOH8Ccv6QW2bK38cYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681e9a577e61c, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 18
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEF8aTHMFF7Drdj5g4li5DN4oAg
+カード保存結果: {"card_id":"ccof:CA4SEF8aTHMFF7Drdj5g4li5DN4oAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEF8aTHMFF7Drdj5g4li5DN4oAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e9a589273b, 開始=2025-05-10 00:14:16, 次回請求=2025-06-10 00:14:16
+サブスクリプション保存結果: 5
+初回決済を実行
+初回決済結果: false
+初回決済失敗
+決済履歴保存結果: null
+メール通知処理開始: サブスクリプションID=sub_681e9a589273b, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681e9a589273b","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 00:17:23
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEOElf3qlbLascE6XlKFmFccYASgC","email":"ru_ya_ru0@yahoo.co.jp","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru0@yahoo.co.jp
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681e9b136cb29, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 19
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEJ3PnwqLEBTpuOSoF4j6HlIoAg
+カード保存結果: {"card_id":"ccof:CA4SEJ3PnwqLEBTpuOSoF4j6HlIoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEJ3PnwqLEBTpuOSoF4j6HlIoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681e9b14c963e, 開始=2025-05-10 00:17:24, 次回請求=2025-06-10 00:17:24
+サブスクリプション保存結果: 6
+初回決済を実行
+初回決済結果: false
+初回決済失敗
+決済履歴保存結果: null
+メール通知処理開始: サブスクリプションID=sub_681e9b14c963e, メール=ru_ya_ru0@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681e9b14c963e","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 00:40:05
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEK_tFAJvecJVGPqDhcW1Qc4YASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681ea065c00ee, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 20
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEO6BW5OBCsA_OyaKSgD1lyIoAg
+カード保存結果: {"card_id":"ccof:CA4SEO6BW5OBCsA_OyaKSgD1lyIoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEO6BW5OBCsA_OyaKSgD1lyIoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681ea0670dacc, 開始=2025-05-10 00:40:07, 次回請求=2025-06-10 00:40:07
+サブスクリプション保存結果: 7
+初回決済を実行
+初回決済結果: false
+初回決済失敗
+決済履歴保存結果: null
+メール通知処理開始: サブスクリプションID=sub_681ea0670dacc, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681ea0670dacc","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 01:01:13
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEFm3UQjupF6x0rFZrFpOTlUYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681ea5592989f, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 21
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEPjUd8s9Jj5h7we_WEC8_mEoAg
+カード保存結果: {"card_id":"ccof:CA4SEPjUd8s9Jj5h7we_WEC8_mEoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEPjUd8s9Jj5h7we_WEC8_mEoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681ea55a4410e, 開始=2025-05-10 01:01:14, 次回請求=2025-06-10 01:01:14
+サブスクリプション保存結果: 8
+初回決済を実行
+初回決済結果: false
+初回決済失敗
+決済履歴保存結果: null
+メール通知処理開始: サブスクリプションID=sub_681ea55a4410e, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681ea55a4410e","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 01:23:12
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEHgNmke9CG-cr4IVjGvqMR0YASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681eaa807ec5b, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 22
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SENtF_YTqIsqYblIryqhhP0coAg
+カード保存結果: {"card_id":"ccof:CA4SENtF_YTqIsqYblIryqhhP0coAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SENtF_YTqIsqYblIryqhhP0coAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681eaa818ba97, 開始=2025-05-10 01:23:13, 次回請求=2025-06-10 01:23:13
+サブスクリプション保存結果: 9
+初回決済を実行
+初回決済結果: false
+初回決済失敗
+決済履歴保存結果: null
+メール通知処理開始: サブスクリプションID=sub_681eaa818ba97, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681eaa818ba97","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 01:30:16
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEOsTt6n_hLMxLQeDDBki_kwYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681eac289dccf, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 23
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+カードID: ccof:CA4SEBh8RAUw6UqtAh8teV4_JPsoAg
+カード保存結果: {"card_id":"ccof:CA4SEBh8RAUw6UqtAh8teV4_JPsoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2026,"cardholder_name":" "}
+カード保存結果: {"id":"ccof:CA4SEBh8RAUw6UqtAh8teV4_JPsoAg","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2026,"cardholder_name":" ","billing_address":{"postal_code":"11111"},"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","merchant_id":"MLYAKFGC12YD6","enabled":true,"card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111","version":1}
+サブスクリプション情報: ID=sub_681eac2a2cb40, 開始=2025-05-10 01:30:18, 次回請求=2025-06-10 01:30:18
+サブスクリプション保存結果: 10
+初回決済を実行
+初回決済結果: false
+初回決済失敗
+決済履歴保存結果: null
+メール通知処理開始: サブスクリプションID=sub_681eac2a2cb40, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681eac2a2cb40","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 01:35:08
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEMnjDW91P9heUb0KNGEz1GkYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681ead4cb8a28, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 24
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+初回決済結果: {"id":"nBtDceEKVWilN3wSstK6TxWIPPeZY","created_at":"2025-05-10T01:35:09.825Z","updated_at":"2025-05-10T01:35:10.126Z","amount_money":{"amount":3000,"currency":"JPY"},"total_money":{"amount":3000,"currency":"JPY"},"approved_money":{"amount":3000,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-17T01:35:09.825Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-10T01:35:09.962Z","captured_at":"2025-05-10T01:35:10.126Z"}},"location_id":"LA6DW2NR4880C","order_id":"CiNRY3w3R8W6nJQqQEDCET0oDC6YY","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","risk_evaluation":{"created_at":"2025-05-10T01:35:09.962Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"nBtD","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/nBtDceEKVWilN3wSstK6TxWIPPeZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"YEPXa7e9uGcsTRNVN63WesNAXhJ3t88j619tFfA47yU6o"}
+サブスクリプション情報: ID=sub_681ead4e30566, 開始=2025-05-10 01:35:10, 次回請求=2025-06-10 01:35:10
+サブスクリプション保存結果: 11
+初回決済成功: 支払いID=nBtDceEKVWilN3wSstK6TxWIPPeZY
+サブスクリプション処理開始: 2025-05-10 01:38:35
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SEPWdD6fQIX0TkXeNaMopLJkYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681eae1b53a15, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 25
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+初回決済結果: {"id":"7FiTyQU1KVvJOUlsaJ5RwLep8dPZY","created_at":"2025-05-10T01:38:36.772Z","updated_at":"2025-05-10T01:38:37.037Z","amount_money":{"amount":3000,"currency":"JPY"},"total_money":{"amount":3000,"currency":"JPY"},"approved_money":{"amount":3000,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-17T01:38:36.772Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-10T01:38:36.905Z","captured_at":"2025-05-10T01:38:37.037Z"}},"location_id":"LA6DW2NR4880C","order_id":"6YgQUYlhhouyDNj79RhBDWREsmaZY","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","risk_evaluation":{"created_at":"2025-05-10T01:38:36.905Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"7FiT","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/7FiTyQU1KVvJOUlsaJ5RwLep8dPZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"PuuIEK5OSsCfbUH1Giuoc5pNOwy2G2bUIwGeYZJShAP6o"}
+サブスクリプション情報: ID=sub_681eae1d2dff2, 開始=2025-05-10 01:38:37, 次回請求=2025-06-10 01:38:37
+サブスクリプション保存結果: 12
+初回決済成功: 支払いID=7FiTyQU1KVvJOUlsaJ5RwLep8dPZY
+決済履歴保存結果: false
+メール通知処理開始: サブスクリプションID=sub_681eae1d2dff2, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681eae1d2dff2","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 01:44:10
+POST データ: {"action":"edel_square_process_subscription","nonce":"7580216b90","payment_token":"cnon:CA4SENGhO8S0hA7e-xS6Tb2rVigYASgC","email":"exhearts@gmail.com","plan_id":"","amount":"3000","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"monthly","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=exhearts@gmail.com
+既にログイン中: ユーザーID=33
+ユーザーID: 33
+プラン作成: plan_681eaf6aecfc5, 金額: 3000, 名前: プレミアムプラン
+プラン保存結果: 26
+顧客ID: NBPEXH93X3J98CM1ZB1PKNYVKG
+初回決済結果: {"id":"nBp7poHRGUTFPuZhzBniAZs1WkJZY","created_at":"2025-05-10T01:44:12.333Z","updated_at":"2025-05-10T01:44:12.604Z","amount_money":{"amount":3000,"currency":"JPY"},"total_money":{"amount":3000,"currency":"JPY"},"approved_money":{"amount":3000,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-17T01:44:12.333Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2026,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-10T01:44:12.464Z","captured_at":"2025-05-10T01:44:12.604Z"}},"location_id":"LA6DW2NR4880C","order_id":"eKqHhAAIUtYfpoxBmKMSJZxPb6UZY","customer_id":"NBPEXH93X3J98CM1ZB1PKNYVKG","risk_evaluation":{"created_at":"2025-05-10T01:44:12.464Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"nBp7","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/nBp7poHRGUTFPuZhzBniAZs1WkJZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"yVuKO2k2P2XaIhXwItA44axFXnPp9nVzjMP0GQIOgqO6o"}
+サブスクリプション情報: ID=sub_681eaf6ca3e17, 開始=2025-05-10 01:44:12, 次回請求=2025-06-10 01:44:12
+サブスクリプション保存結果: 13
+初回決済成功: 支払いID=nBp7poHRGUTFPuZhzBniAZs1WkJZY
+決済履歴保存結果: 1
+メール通知処理開始: サブスクリプションID=sub_681eaf6ca3e17, メール=exhearts@gmail.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681eaf6ca3e17","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 04:33:49
+POST データ: {"action":"edel_square_process_subscription","nonce":"7aebaf0bc1","payment_token":"cnon:CA4SEDhz47vy2P0VCcU7_EJLwmwYASgC","email":"info@edel.local","plan_id":"","amount":"300","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_681ed72d5d0b6, 金額: 300, 名前: プレミアムプラン
+プラン保存結果: 27
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"l0rDLoqHU5wAQ2qiAPZi2PmLftDZY","created_at":"2025-05-10T04:33:51.036Z","updated_at":"2025-05-10T04:33:51.308Z","amount_money":{"amount":300,"currency":"JPY"},"total_money":{"amount":300,"currency":"JPY"},"approved_money":{"amount":300,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-17T04:33:51.036Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-10T04:33:51.172Z","captured_at":"2025-05-10T04:33:51.308Z"}},"location_id":"LA6DW2NR4880C","order_id":"4byy90d506V559K1zeBQA5McLg8YY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-10T04:33:51.172Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"l0rD","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/l0rDLoqHU5wAQ2qiAPZi2PmLftDZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"fvgiCAFbJQ9p7p6ghfOXcPCEX5FsrzodR1mV2V6uGgl6o"}
+サブスクリプション情報: ID=sub_681ed72f7f0e7, 開始=2025-05-10 04:33:51, 次回請求=2025-05-11 04:33:51
+サブスクリプション保存結果: 14
+初回決済成功: 支払いID=l0rDLoqHU5wAQ2qiAPZi2PmLftDZY
+決済履歴保存結果: 2
+メール通知処理開始: サブスクリプションID=sub_681ed72f7f0e7, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681ed72f7f0e7","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-10 22:07:32
+POST データ: {"action":"edel_square_process_subscription","nonce":"b2f6534c19","payment_token":"cnon:CA4SENVzYieM58TlMLUF_wlAfE0YASgC","email":"yabea@yabea.com","plan_id":"","amount":"300","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=yabea@yabea.com
+新規ユーザー作成: ID=34, メール=yabea@yabea.com
+ユーザーID: 34
+プラン作成: plan_681fce24dcaeb, 金額: 300, 名前: プレミアムプラン
+プラン保存結果: 28
+顧客ID: QJRA2XKB29MHWSKW1TP1DK4RYR
+初回決済結果: {"id":"JMk4wuOTvG42GXeu9anEAByv4JTZY","created_at":"2025-05-10T22:07:34.141Z","updated_at":"2025-05-10T22:07:34.396Z","amount_money":{"amount":300,"currency":"JPY"},"total_money":{"amount":300,"currency":"JPY"},"approved_money":{"amount":300,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-17T22:07:34.141Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-10T22:07:34.272Z","captured_at":"2025-05-10T22:07:34.396Z"}},"location_id":"LA6DW2NR4880C","order_id":"MXz2fNU2AuojHqadRMTOjKZsamMZY","customer_id":"QJRA2XKB29MHWSKW1TP1DK4RYR","risk_evaluation":{"created_at":"2025-05-10T22:07:34.273Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"JMk4","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/JMk4wuOTvG42GXeu9anEAByv4JTZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"8eoJ6B2FlgFHIpgKNRQhGJoqi8CmI23R1gWuJyi2XwS6o"}
+サブスクリプション情報: ID=sub_681fce26a4c89, 開始=2025-05-10 22:07:34, 次回請求=2025-05-11 22:07:34
+サブスクリプション保存結果: 15
+初回決済成功: 支払いID=JMk4wuOTvG42GXeu9anEAByv4JTZY
+決済履歴保存結果: 3
+メール通知処理開始: サブスクリプションID=sub_681fce26a4c89, メール=yabea@yabea.com
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_681fce26a4c89","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-12 01:41:59
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEDpNOK46iEYaYeBd7K1GdYAYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_682151e732371, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 29
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"j5aHCmy0THPHHLbxU0gsqXusYNEZY","created_at":"2025-05-12T01:42:00.205Z","updated_at":"2025-05-12T01:42:00.465Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T01:42:00.205Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T01:42:00.338Z","captured_at":"2025-05-12T01:42:00.465Z"}},"location_id":"LA6DW2NR4880C","order_id":"mkNhqpklSbDv9qd7haTcyFQaoBIZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T01:42:00.339Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"j5aH","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/j5aHCmy0THPHHLbxU0gsqXusYNEZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"dIbE0I5pq80y1Jyu2FdaDAc8bnsdd3buWSPaJUe8cXr6o"}
+サブスクリプション情報: ID=sub_682151e89ff17, 開始=2025-05-12 01:42:00, 次回請求=2025-05-13 01:42:00
+サブスクリプション保存結果: 16
+初回決済成功: 支払いID=j5aHCmy0THPHHLbxU0gsqXusYNEZY
+決済履歴保存結果: 4
+メール通知処理開始: サブスクリプションID=sub_682151e89ff17, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_682151e89ff17","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-12 11:50:10
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SENpMMegR-I9Mobi9ywOrJc4YASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_682161e202441, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 1
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+サブスクリプション処理開始: 2025-05-12 11:58:41
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SECgAGAcfIcoL-YOXtr3Tk-UYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_682163e193fe7, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 2
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+サブスクリプション処理開始: 2025-05-12 12:21:39
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEOW0eZp2k7wHm5bgyyJKsp8YASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821694381c05, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 3
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"dwV4hhP66kqqKYav3vDg1Rggh9dZY","created_at":"2025-05-12T03:21:40.453Z","updated_at":"2025-05-12T03:21:40.702Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T03:21:40.453Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T03:21:40.583Z","captured_at":"2025-05-12T03:21:40.702Z"}},"location_id":"LA6DW2NR4880C","order_id":"e8nVrAv0fKoN1IZ5laS0NdtCa1eZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T03:21:40.584Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"dwV4","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/dwV4hhP66kqqKYav3vDg1Rggh9dZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"KydhiPZQgCJcDUBbil92z4Q4wpRWwPRUhTU1dbY9INa6o"}
+サブスクリプション情報: ID=sub_68216944d2f22, 開始=2025-05-12 12:21:40, 次回請求=2025-05-13 12:21:40
+サブスクリプション保存結果: 1
+初回決済成功: 支払いID=dwV4hhP66kqqKYav3vDg1Rggh9dZY
+決済履歴保存結果: 1
+メール通知処理開始: サブスクリプションID=sub_68216944d2f22, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68216944d2f22","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-12 16:25:12
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SELCTxREJj631dd_4vcXoCXAYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821a258814e3, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 4
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+サブスクリプション処理開始: 2025-05-12 16:33:15
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEL56SXxmjxtn1MFHJOo3PM4YASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821a43b36d71, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 5
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+決済後のカード情報: {"card_id":null,"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+新しく作成したカード情報: {"card_id":null,"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+決済IDから生成したカードID: payment_X7SvtGf65xbCxspaOS0CaJOPsONZY
+最終的なカード情報: {"card_id":"payment_X7SvtGf65xbCxspaOS0CaJOPsONZY","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+初回決済結果: {"id":"X7SvtGf65xbCxspaOS0CaJOPsONZY","created_at":"2025-05-12T07:33:16.451Z","updated_at":"2025-05-12T07:33:16.698Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T07:33:16.451Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T07:33:16.580Z","captured_at":"2025-05-12T07:33:16.698Z"}},"location_id":"LA6DW2NR4880C","order_id":"Gc36FlMr8uFqnD4FcBoXY2xE55fZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T07:33:16.580Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"X7Sv","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/X7SvtGf65xbCxspaOS0CaJOPsONZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"BOsDwHqcz7cF51FBOnMt8GcXvzt7ql6WSRg4wAq0I6x6o"}
+処理後のカード情報: {"card_id":null,"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+サブスクリプション情報: ID=sub_6821a43e50af2, 開始=2025-05-12 16:33:18, 次回請求=2025-05-13 16:33:18
+サブスクリプション保存結果: 2
+初回決済成功: 支払いID=X7SvtGf65xbCxspaOS0CaJOPsONZY
+決済履歴保存結果: 2
+メール通知処理開始: サブスクリプションID=sub_6821a43e50af2, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6821a43e50af2","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-12 18:51:05
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SENJ8RxOHOx57l2niQOkWOlkYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821c4896e9a2, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 6
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+決済後のカード情報: {"card_id":null,"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+新しく作成したカード情報: {"card_id":null,"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+決済IDから生成したカードID: payment_HdL3wUg8KeCbNdzsMV8qFhHCs6QZY
+最終的なカード情報: {"card_id":"payment_HdL3wUg8KeCbNdzsMV8qFhHCs6QZY","card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+初回決済結果: {"id":"HdL3wUg8KeCbNdzsMV8qFhHCs6QZY","created_at":"2025-05-12T09:51:06.531Z","updated_at":"2025-05-12T09:51:06.785Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T09:51:06.531Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T09:51:06.667Z","captured_at":"2025-05-12T09:51:06.785Z"}},"location_id":"LA6DW2NR4880C","order_id":"a2lR1SLWs5cBADTwXIk3ns8jalZZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T09:51:06.667Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"HdL3","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/HdL3wUg8KeCbNdzsMV8qFhHCs6QZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"xY95xLFoQ8q2gL9OLQYFSCEjIZiT76FjYCxkKCtu9675o"}
+処理後のカード情報: {"card_id":null,"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"cardholder_name":null}
+サブスクリプション情報: ID=sub_6821c48c26651, 開始=2025-05-12 18:51:08, 次回請求=2025-05-13 18:51:08
+サブスクリプション保存結果: 3
+初回決済成功: 支払いID=HdL3wUg8KeCbNdzsMV8qFhHCs6QZY
+決済履歴保存結果: 3
+メール通知処理開始: サブスクリプションID=sub_6821c48c26651, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6821c48c26651","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-12 20:18:46
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEP8KyottkIbC_3CBQi28SxQYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821d916a5f27, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 7
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+エラー発生: 初回決済に失敗しました
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-12 20:29:32
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEJQPPm77F-jJ7Mnn9c36QiUYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821db9c70cc2, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 8
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"JUO7sEeWhDiGlOjLMhuAa11nMCHZY","created_at":"2025-05-12T11:29:37.576Z","updated_at":"2025-05-12T11:29:37.836Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T11:29:37.576Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T11:29:37.707Z","captured_at":"2025-05-12T11:29:37.836Z"}},"location_id":"LA6DW2NR4880C","order_id":"OcHffn8iPiinikUWFBrbff73osFZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T11:29:37.707Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"JUO7","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/JUO7sEeWhDiGlOjLMhuAa11nMCHZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"mhXl7iJbaAyOAAxXAkWfKJ9tlC2o8My3qedc3irJs1N6o"}
+サブスクリプション情報: ID=sub_6821db9e1bdd4, 開始=2025-05-12 20:29:34, 次回請求=2025-05-13 20:29:34
+サブスクリプション保存結果: 4
+初回決済成功: 支払いID=JUO7sEeWhDiGlOjLMhuAa11nMCHZY
+サブスクリプション処理開始: 2025-05-12 20:42:26
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEIMMia9skaS5K1KU8k5Bx9UYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821dea2499bc, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 9
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"fVroCu8otWY7bBi9mvKn5QSIomEZY","created_at":"2025-05-12T11:42:31.547Z","updated_at":"2025-05-12T11:42:31.789Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T11:42:31.547Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T11:42:31.676Z","captured_at":"2025-05-12T11:42:31.789Z"}},"location_id":"LA6DW2NR4880C","order_id":"kHlivugLwoPtimnzJiyGmhxwFZHZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T11:42:31.676Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"fVro","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/fVroCu8otWY7bBi9mvKn5QSIomEZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"l8OwYxPKbthU7b2b1WR1ysnsY3y46Q3PZbLuOFpoGlq6o"}
+サブスクリプション情報: ID=sub_6821dea44250a, 開始=2025-05-12 20:42:28, 次回請求=2025-05-13 20:42:28
+サブスクリプション保存結果: 5
+初回決済成功: 支払いID=fVroCu8otWY7bBi9mvKn5QSIomEZY
+サブスクリプション処理開始: 2025-05-12 20:44:49
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEJ1VGSTo_CisI4i7Mv44Te8YASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821df31b667e, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 10
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"vP0Uml7JA6Zydk19j2bWfU7MhiQZY","created_at":"2025-05-12T11:44:54.819Z","updated_at":"2025-05-12T11:44:55.073Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T11:44:54.819Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T11:44:54.951Z","captured_at":"2025-05-12T11:44:55.073Z"}},"location_id":"LA6DW2NR4880C","order_id":"4dJbyDL82F8Xf4KwgBj2sRoO7dMZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T11:44:54.952Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"vP0U","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/vP0Uml7JA6Zydk19j2bWfU7MhiQZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"XUBSiyOE1l5PxNqqrcBZVHj9ggwBJjwOxlDz9HyykjW6o"}
+サブスクリプション情報: ID=sub_6821df3363f06, 開始=2025-05-12 20:44:51, 次回請求=2025-05-13 20:44:51
+サブスクリプション保存結果: 6
+初回決済成功: 支払いID=vP0Uml7JA6Zydk19j2bWfU7MhiQZY
+サブスクリプション処理開始: 2025-05-12 20:52:48
+POST データ: {"action":"edel_square_process_subscription","nonce":"42e483ca73","payment_token":"cnon:CA4SEDsjTkHaE_Xl3yXAHnq6CzsYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821e11073146, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 11
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"H5ZPGZapx5jzjTDqmZihThmRzzYZY","created_at":"2025-05-12T11:52:53.972Z","updated_at":"2025-05-12T11:52:54.215Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T11:52:53.972Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T11:52:54.105Z","captured_at":"2025-05-12T11:52:54.215Z"}},"location_id":"LA6DW2NR4880C","order_id":"UDfSHt8JxaOnrPkr4pG9daoAzEUZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T11:52:54.105Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"H5ZP","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/H5ZPGZapx5jzjTDqmZihThmRzzYZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"p0aA8lllLsCarWGftxXDiosQs1xaCpoT4IzSlFv15tv6o"}
+サブスクリプション情報: ID=sub_6821e112829a9, 開始=2025-05-12 20:52:50, 次回請求=2025-05-13 20:52:50
+サブスクリプション保存結果: 7
+初回決済成功: 支払いID=H5ZPGZapx5jzjTDqmZihThmRzzYZY
+決済履歴保存結果: false
+メール通知処理開始: サブスクリプションID=sub_6821e112829a9, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6821e112829a9","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-12 21:52:58
+POST データ: {"action":"edel_square_process_subscription","nonce":"60b730ee34","payment_token":"cnon:CA4SEBlQ6ROVQSD-yPrsi_Fcj8EYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6821ef2acd440, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 12
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"Jm9mkIr4iYaqaK9EJqigRPjkDObZY","created_at":"2025-05-12T12:52:59.800Z","updated_at":"2025-05-12T12:53:00.074Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T12:52:59.800Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T12:52:59.932Z","captured_at":"2025-05-12T12:53:00.074Z"}},"location_id":"LA6DW2NR4880C","order_id":"8jb9z9dm3YyXE4y7IR44Df2iQIcZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T12:52:59.932Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"Jm9m","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/Jm9mkIr4iYaqaK9EJqigRPjkDObZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"j0QkVHWrnHzQBQaJKosd34UJfLqgLnIrfe7ORwDt9Gs6o"}
+サブスクリプション情報: ID=sub_6821ef2c9693c, 開始=2025-05-12 21:53:00, 次回請求=2025-05-13 21:53:00
+サブスクリプション保存結果: 8
+初回決済成功: 支払いID=Jm9mkIr4iYaqaK9EJqigRPjkDObZY
+決済履歴保存結果: 10
+メール通知処理開始: サブスクリプションID=sub_6821ef2c9693c, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6821ef2c9693c","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-13 07:31:08
+POST データ: {"action":"edel_square_process_subscription","nonce":"60b730ee34","payment_token":"cnon:CA4SEPhaAYNQ4--xXyw9XDbJnkEYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_682276ac4366d, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 13
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"3Z3SfE2rjT1ENJ40UoKhiXsbvubZY","created_at":"2025-05-12T22:31:09.592Z","updated_at":"2025-05-12T22:31:09.845Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-19T22:31:09.592Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-12T22:31:09.728Z","captured_at":"2025-05-12T22:31:09.846Z"}},"location_id":"LA6DW2NR4880C","order_id":"qUItXTvXiFWCNIAVn3xmLrTHZN6YY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-12T22:31:09.728Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"3Z3S","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/3Z3SfE2rjT1ENJ40UoKhiXsbvubZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"kUZVZkme11cvvPq2XntIsSESOAVM5mD3TdtQCM3peEm6o"}
+サブスクリプション情報: ID=sub_682276ae45d19, 開始=2025-05-13 07:31:10, 次回請求=2025-05-14 07:31:10
+サブスクリプション保存結果: 9
+初回決済成功: 支払いID=3Z3SfE2rjT1ENJ40UoKhiXsbvubZY
+決済履歴保存結果: 12
+メール通知処理開始: サブスクリプションID=sub_682276ae45d19, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_682276ae45d19","redirect_url":"https:\/\/edel.local\/myac\/"}
+サブスクリプション処理開始: 2025-05-13 13:56:20
+POST データ: {"action":"edel_square_process_subscription","nonce":"84825dd610","payment_token":"cnon:CA4SEELhm2MmDCbPXPif_QjUd_YYASgC","email":"info@edel.local","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6822d0f45c9b7, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 14
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"nLKfub8v6fnxQI3NtIzffELlscMZY","created_at":"2025-05-13T04:56:21.338Z","updated_at":"2025-05-13T04:56:21.583Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-20T04:56:21.338Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-13T04:56:21.470Z","captured_at":"2025-05-13T04:56:21.583Z"}},"location_id":"LA6DW2NR4880C","order_id":"Ix3Du210CtymAbdJRfmrugFOreJZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-13T04:56:21.470Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"nLKf","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/nLKfub8v6fnxQI3NtIzffELlscMZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"RFtqbOsCght8OwmwjDz1aGV3341kUHWcizSgIrBybqk6o"}
+サブスクリプション情報: ID=sub_6822d0f62c1b7, 開始=2025-05-13 13:56:22, 次回請求=2025-05-14 13:56:22
+サブスクリプション保存結果: 10
+初回決済成功: 支払いID=nLKfub8v6fnxQI3NtIzffELlscMZY
+決済履歴保存結果: 13
+メール通知処理開始: サブスクリプションID=sub_6822d0f62c1b7, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6822d0f62c1b7","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-14 10:16:40
+POST データ: {"action":"edel_square_process_subscription","nonce":"3684e50b24","payment_token":"cnon:CA4SEMF5Rh9Tq4_MmqkfgBLIyOUYASgC","email":"info@edel111.info","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel111.info
+新規ユーザー作成: ID=35, メール=info@edel111.info
+ユーザーID: 35
+プラン作成: plan_6823eef9098ea, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 15
+顧客ID: Q282JF3TYCEVC8V6K4960AFSX0
+初回決済結果: {"id":"73xoDiWb63daztmEWcMez9rx3VFZY","created_at":"2025-05-14T01:16:42.617Z","updated_at":"2025-05-14T01:16:42.916Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-21T01:16:42.617Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-14T01:16:42.748Z","captured_at":"2025-05-14T01:16:42.916Z"}},"location_id":"LA6DW2NR4880C","order_id":"mCS2hmgzZvIEm7eDMhymVZBav6TZY","customer_id":"Q282JF3TYCEVC8V6K4960AFSX0","risk_evaluation":{"created_at":"2025-05-14T01:16:42.748Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"73xo","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/73xoDiWb63daztmEWcMez9rx3VFZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"1gH4CkRSEYAEB0PborqXtcGO5vi3MExCtflqF9aZ0jP6o"}
+サブスクリプション情報: ID=sub_6823eefb36045, 開始=2025-05-14 10:16:43, 次回請求=2025-05-15 10:16:43
+サブスクリプション保存結果: 11
+初回決済成功: 支払いID=73xoDiWb63daztmEWcMez9rx3VFZY
+決済履歴保存結果: 15
+メール通知処理開始: サブスクリプションID=sub_6823eefb36045, メール=info@edel111.info
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6823eefb36045","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 11:28:41
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEOTGmX4JbPsbPebLEVErLN4YASgC","email":"ru_yu_ru6@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_yu_ru6@yahoo.co.jp
+新規ユーザー作成: ID=40, メール=ru_yu_ru6@yahoo.co.jp
+ユーザーID: 40
+プラン作成: plan_68255159cb21c, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 16
+顧客ID: GFR7ET5PNGW8BQNC2YZP3Z75AR
+初回決済結果: {"id":"JQWOPCEDOl1T8Jm2LVkgtSwg0QZZY","created_at":"2025-05-15T02:28:42.927Z","updated_at":"2025-05-15T02:28:43.167Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T02:28:42.927Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T02:28:43.059Z","captured_at":"2025-05-15T02:28:43.167Z"}},"location_id":"LA6DW2NR4880C","order_id":"GOU26zpFTdHQcxA05GJ6iu16C45YY","customer_id":"GFR7ET5PNGW8BQNC2YZP3Z75AR","risk_evaluation":{"created_at":"2025-05-15T02:28:43.059Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"JQWO","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/JQWOPCEDOl1T8Jm2LVkgtSwg0QZZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"CrLtmznaAVnt0hl5pBStEQWywj6tUwiQkaeP26ebLml6o"}
+サブスクリプション情報: ID=sub_6825515b9d922, 開始=2025-05-15 11:28:43, 次回請求=2025-05-16 11:28:43
+サブスクリプション保存結果: 12
+初回決済成功: 支払いID=JQWOPCEDOl1T8Jm2LVkgtSwg0QZZY
+決済履歴保存結果: 17
+メール通知処理開始: サブスクリプションID=sub_6825515b9d922, メール=ru_yu_ru6@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825515b9d922","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 11:38:29
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEHmkhzyW5JGiZAKRhJyzWEQYASgC","email":"ru_ya_ru7@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru7@yahoo.co.jp
+新規ユーザー作成: ID=41, メール=ru_ya_ru7@yahoo.co.jp
+ユーザーID: 41
+プラン作成: plan_682553a60241c, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 17
+顧客ID: HN6ZF5F1602WEK1TZMFY7DVM7G
+初回決済結果: {"id":"zRqfc2mHMQnikxJs3HCRVzlrol6YY","created_at":"2025-05-15T02:38:31.547Z","updated_at":"2025-05-15T02:38:31.813Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T02:38:31.547Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T02:38:31.684Z","captured_at":"2025-05-15T02:38:31.814Z"}},"location_id":"LA6DW2NR4880C","order_id":"uQxtWikJ3G2oqE6GqPGyXHSIk16YY","customer_id":"HN6ZF5F1602WEK1TZMFY7DVM7G","risk_evaluation":{"created_at":"2025-05-15T02:38:31.684Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"zRqf","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/zRqfc2mHMQnikxJs3HCRVzlrol6YY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"adhwrDpD37npQWMql3kLHx9PbYZXTUJeeJinvcG8cpG6o"}
+サブスクリプション情報: ID=sub_682553a84c6df, 開始=2025-05-15 11:38:32, 次回請求=2025-05-16 11:38:32
+サブスクリプション保存結果: 13
+初回決済成功: 支払いID=zRqfc2mHMQnikxJs3HCRVzlrol6YY
+決済履歴保存結果: 18
+メール通知処理開始: サブスクリプションID=sub_682553a84c6df, メール=ru_ya_ru7@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_682553a84c6df","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 11:57:29
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEPxo3mT2BmQ91RKssBwl_aYYASgC","email":"ru_ya_ru7@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru7@yahoo.co.jp
+既存ユーザー: ID=41
+ユーザーID: 41
+プラン作成: plan_682558199d175, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 18
+顧客ID: HN6ZF5F1602WEK1TZMFY7DVM7G
+初回決済結果: {"id":"RGr49gHIvLVJciIV0uFcIg19k5TZY","created_at":"2025-05-15T02:57:30.404Z","updated_at":"2025-05-15T02:57:30.667Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T02:57:30.404Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T02:57:30.534Z","captured_at":"2025-05-15T02:57:30.668Z"}},"location_id":"LA6DW2NR4880C","order_id":"Qpd9oq94pNDE0UydtqppKn4rSVSZY","customer_id":"HN6ZF5F1602WEK1TZMFY7DVM7G","risk_evaluation":{"created_at":"2025-05-15T02:57:30.534Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"RGr4","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/RGr49gHIvLVJciIV0uFcIg19k5TZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"VEYEYbNrO08PMU9JSDUUh13nwizSfQNkpMymxraYlkZ6o"}
+サブスクリプション情報: ID=sub_6825581b91562, 開始=2025-05-15 11:57:31, 次回請求=2025-05-16 11:57:31
+サブスクリプション保存結果: 14
+初回決済成功: 支払いID=RGr49gHIvLVJciIV0uFcIg19k5TZY
+決済履歴保存結果: 19
+メール通知処理開始: サブスクリプションID=sub_6825581b91562, メール=ru_ya_ru7@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825581b91562","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 12:03:50
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEABGDVyL_1HEVDEf7603Tq8YASgC","email":"ru_ya_ru8@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru8@yahoo.co.jp
+新規ユーザー作成: ID=42, メール=ru_ya_ru8@yahoo.co.jp
+ユーザーID: 42
+プラン作成: plan_68255996a5663, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 19
+顧客ID: K13CJ8SRYMST4WDJVVSDKJJSMW
+初回決済結果: {"id":"BA69I8a5HxLn8fIsDpaInWSh2nOZY","created_at":"2025-05-15T03:03:52.359Z","updated_at":"2025-05-15T03:03:52.617Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T03:03:52.359Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T03:03:52.490Z","captured_at":"2025-05-15T03:03:52.618Z"}},"location_id":"LA6DW2NR4880C","order_id":"eqmVvJClzSWczSkXUC7N3N2tocYZY","customer_id":"K13CJ8SRYMST4WDJVVSDKJJSMW","risk_evaluation":{"created_at":"2025-05-15T03:03:52.490Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"BA69","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/BA69I8a5HxLn8fIsDpaInWSh2nOZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"wS1ySS0nXz5Qw7h5S6N4Sy2j7F55rp8v5vRfuakfqmm6o"}
+サブスクリプション情報: ID=sub_6825599907381, 開始=2025-05-15 12:03:53, 次回請求=2025-05-16 12:03:53
+サブスクリプション保存結果: 15
+初回決済成功: 支払いID=BA69I8a5HxLn8fIsDpaInWSh2nOZY
+決済履歴保存結果: 20
+メール通知処理開始: サブスクリプションID=sub_6825599907381, メール=ru_ya_ru8@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825599907381","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 12:23:52
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEKHgQ4gW3llc22d4E74LQ1EYASgC","email":"ru_ya_ru9@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru9@yahoo.co.jp
+新規ユーザー作成: ID=43, メール=ru_ya_ru9@yahoo.co.jp
+ユーザーID: 43
+プラン作成: plan_68255e490e998, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 20
+顧客ID: RBH8APKKNJ91PW8PZ04EYE2XK8
+初回決済結果: {"id":"J8AiQWzjFbFmOpmqHiQKFoA5HeWZY","created_at":"2025-05-15T03:23:54.212Z","updated_at":"2025-05-15T03:23:54.452Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T03:23:54.212Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T03:23:54.344Z","captured_at":"2025-05-15T03:23:54.452Z"}},"location_id":"LA6DW2NR4880C","order_id":"gL4mnNvK2mvk97htzYZFOWDnQvSZY","customer_id":"RBH8APKKNJ91PW8PZ04EYE2XK8","risk_evaluation":{"created_at":"2025-05-15T03:23:54.344Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"J8Ai","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/J8AiQWzjFbFmOpmqHiQKFoA5HeWZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"I2iOwy7tvwkXrdNyvyN1ziXo9DLa0MQyaS4kzoV5XWI6o"}
+サブスクリプション情報: ID=sub_68255e4ada1b2, 開始=2025-05-15 12:23:54, 次回請求=2025-05-16 12:23:54
+サブスクリプション保存結果: 16
+初回決済成功: 支払いID=J8AiQWzjFbFmOpmqHiQKFoA5HeWZY
+決済履歴保存結果: 21
+メール通知処理開始: サブスクリプションID=sub_68255e4ada1b2, メール=ru_ya_ru9@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68255e4ada1b2","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 12:32:43
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEMoTX0x5L-Hhbphfz8xGeZYYASgC","email":"ru_ya_ru10@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru10@yahoo.co.jp
+新規ユーザー作成: ID=44, メール=ru_ya_ru10@yahoo.co.jp
+ユーザーID: 44
+プラン作成: plan_6825605c0c5f3, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 21
+顧客ID: BAVX8PWMD1S3G3F6KYZ06SK6K8
+初回決済結果: {"id":"lagQRQsBYciRn0Yq1gGitOZHgc6YY","created_at":"2025-05-15T03:32:45.122Z","updated_at":"2025-05-15T03:32:45.375Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T03:32:45.122Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T03:32:45.251Z","captured_at":"2025-05-15T03:32:45.375Z"}},"location_id":"LA6DW2NR4880C","order_id":"AFpO4xFArxApsrKnPwbhoRJWnGfZY","customer_id":"BAVX8PWMD1S3G3F6KYZ06SK6K8","risk_evaluation":{"created_at":"2025-05-15T03:32:45.251Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"lagQ","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/lagQRQsBYciRn0Yq1gGitOZHgc6YY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"nb8qTXEYtffOPYN9j3uQWlawsei0uZjJ8zQYAor9E9k6o"}
+サブスクリプション情報: ID=sub_6825605dead5b, 開始=2025-05-15 12:32:45, 次回請求=2025-05-16 12:32:45
+サブスクリプション保存結果: 17
+初回決済成功: 支払いID=lagQRQsBYciRn0Yq1gGitOZHgc6YY
+決済履歴保存結果: 22
+メール通知処理開始: サブスクリプションID=sub_6825605dead5b, メール=ru_ya_ru10@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825605dead5b","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 12:35:28
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEDjTxvYeiwQEdGzSVCffpkgYASgC","email":"ru_ya_ru11@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru11@yahoo.co.jp
+新規ユーザー作成: ID=45, メール=ru_ya_ru11@yahoo.co.jp
+ユーザーID: 45
+プラン作成: plan_68256100e77f1, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 22
+顧客ID: HWWVN4058FPWE9Z135AZMJ3WEW
+初回決済結果: {"id":"pYqiBpSWYrdK1n3viMrg6oYAISGZY","created_at":"2025-05-15T03:35:30.188Z","updated_at":"2025-05-15T03:35:30.443Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T03:35:30.188Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T03:35:30.316Z","captured_at":"2025-05-15T03:35:30.443Z"}},"location_id":"LA6DW2NR4880C","order_id":"w13tv576u5ZcD2cwx4Bt24zv2UPZY","customer_id":"HWWVN4058FPWE9Z135AZMJ3WEW","risk_evaluation":{"created_at":"2025-05-15T03:35:30.316Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"pYqi","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/pYqiBpSWYrdK1n3viMrg6oYAISGZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"ZGFjCISRlb2PabpZvhMfaBJa48yclWHQCKJi5fB81qp6o"}
+サブスクリプション情報: ID=sub_68256103cfabc, 開始=2025-05-15 12:35:31, 次回請求=2025-05-16 12:35:31
+サブスクリプション保存結果: 18
+初回決済成功: 支払いID=pYqiBpSWYrdK1n3viMrg6oYAISGZY
+決済履歴保存結果: 23
+メール通知処理開始: サブスクリプションID=sub_68256103cfabc, メール=ru_ya_ru11@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68256103cfabc","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 12:41:07
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEIVDPOA4gIPnXrPXbRCvFw8YASgC","email":"ru_ya_ru12@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru12@yahoo.co.jp
+新規ユーザー作成: ID=46, メール=ru_ya_ru12@yahoo.co.jp
+ユーザーID: 46
+プラン作成: plan_68256253c1b1b, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 23
+顧客ID: 9HASCYA12C717AD7CP92V8GXZM
+初回決済結果: {"id":"nZJLyVqsvZ79uEDgZH02KLQoefZZY","created_at":"2025-05-15T03:41:08.986Z","updated_at":"2025-05-15T03:41:09.223Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T03:41:08.986Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T03:41:09.115Z","captured_at":"2025-05-15T03:41:09.223Z"}},"location_id":"LA6DW2NR4880C","order_id":"MvnCjnJfPca9S4ntMt3mhKb3qYXZY","customer_id":"9HASCYA12C717AD7CP92V8GXZM","risk_evaluation":{"created_at":"2025-05-15T03:41:09.115Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"nZJL","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/nZJLyVqsvZ79uEDgZH02KLQoefZZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"WIzR4WhiF2XLx65cv6fRVSeJhe5DktXaeTX3i70AwyS6o"}
+サブスクリプション情報: ID=sub_68256255e76d1, 開始=2025-05-15 12:41:09, 次回請求=2025-05-16 12:41:09
+サブスクリプション保存結果: 19
+初回決済成功: 支払いID=nZJLyVqsvZ79uEDgZH02KLQoefZZY
+決済履歴保存結果: 24
+メール通知処理開始: サブスクリプションID=sub_68256255e76d1, メール=ru_ya_ru12@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68256255e76d1","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 13:22:54
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SENVe7JQ9muMpLk1hdW1KLwQYASgC","email":"ru_ya_ru20@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru20@yahoo.co.jp
+新規ユーザー作成: ID=47, メール=ru_ya_ru20@yahoo.co.jp
+ユーザーID: 47
+プラン作成: plan_68256c1e6df2c, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 24
+顧客ID: 74JR8YYJTZJ1119QAKB4PMR7B4
+初回決済結果: {"id":"ZehOBWt0zfvT7CTcitxG3x3S48QZY","created_at":"2025-05-15T04:22:55.768Z","updated_at":"2025-05-15T04:22:56.026Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T04:22:55.768Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T04:22:55.902Z","captured_at":"2025-05-15T04:22:56.026Z"}},"location_id":"LA6DW2NR4880C","order_id":"KCxgCvE3zS51CjYWBjz7jycngoPZY","customer_id":"74JR8YYJTZJ1119QAKB4PMR7B4","risk_evaluation":{"created_at":"2025-05-15T04:22:55.902Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"ZehO","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/ZehOBWt0zfvT7CTcitxG3x3S48QZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"Cvwu96zMGnP7X4FjT8O4Js2xSVJf5rlSnkqWly8Obbl6o"}
+サブスクリプション情報: ID=sub_68256c206b9c2, 開始=2025-05-15 13:22:56, 次回請求=2025-05-16 13:22:56
+サブスクリプション保存結果: 20
+初回決済成功: 支払いID=ZehOBWt0zfvT7CTcitxG3x3S48QZY
+決済履歴保存結果: 25
+メール通知処理開始: サブスクリプションID=sub_68256c206b9c2, メール=ru_ya_ru20@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68256c206b9c2","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 13:38:16
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SECSAp7x03yysrjK1IzTJNcwYASgC","email":"ru_ya_ru22@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru22@yahoo.co.jp
+新規ユーザー作成: ID=49, メール=ru_ya_ru22@yahoo.co.jp
+process_user_registration結果: 49
+エラー発生: ユーザー登録に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(207): do_action('wp_ajax_nopriv_...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-15 13:41:15
+POST データ: {"action":"edel_square_process_subscription","nonce":"5018c34488","payment_token":"cnon:CA4SECcqNsE2ys3Jv0aqIpG8rA8YASgC","email":"ru_ya_ru22@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru22@yahoo.co.jp
+既にログイン中: ユーザーID=49
+ユーザーID: 49
+プラン作成: plan_6825706b61a06, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 25
+顧客ID: GSYAJ2ENB49GZMX7TCVE2B9YTG
+初回決済結果: {"id":"lEvrAqljNvVBykbf8yQKiOTNygPZY","created_at":"2025-05-15T04:41:16.947Z","updated_at":"2025-05-15T04:41:17.210Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T04:41:16.947Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T04:41:17.085Z","captured_at":"2025-05-15T04:41:17.210Z"}},"location_id":"LA6DW2NR4880C","order_id":"sHjs0YR1Wgd0fQptIaJ9C5SuqKfZY","customer_id":"GSYAJ2ENB49GZMX7TCVE2B9YTG","risk_evaluation":{"created_at":"2025-05-15T04:41:17.085Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"lEvr","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/lEvrAqljNvVBykbf8yQKiOTNygPZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"xC1QB9iIfbnqBkp3kalszpogWVzlXNgHQNAUoh0Udas6o"}
+サブスクリプション情報: ID=sub_6825706d99ca7, 開始=2025-05-15 13:41:17, 次回請求=2025-05-16 13:41:17
+サブスクリプション保存結果: 21
+初回決済成功: 支払いID=lEvrAqljNvVBykbf8yQKiOTNygPZY
+決済履歴保存結果: 26
+メール通知処理開始: サブスクリプションID=sub_6825706d99ca7, メール=ru_ya_ru22@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825706d99ca7","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 13:54:36
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEKdf2wKzUIyzC8IbdsqCQ30YASgC","email":"ru_ya_ru24@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru24@yahoo.co.jp
+新規ユーザー作成: ID=50, メール=ru_ya_ru24@yahoo.co.jp
+エラー発生: ユーザー登録に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(207): do_action('wp_ajax_nopriv_...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-15 13:57:15
+POST データ: {"action":"edel_square_process_subscription","nonce":"15e349c238","payment_token":"cnon:CA4SEEQyqrrwj3cNWJgV8AFiTu8YASgC","email":"ru_ya_ru25@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru25@yahoo.co.jp
+既にログイン中: ユーザーID=50
+エラー発生: ユーザー登録に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-15 13:59:49
+POST データ: {"action":"edel_square_process_subscription","nonce":"15e349c238","payment_token":"cnon:CA4SENioyYksNL9fIlgaVNmGlLAYASgC","email":"ru_ya_ru26@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru26@yahoo.co.jp
+既にログイン中: ユーザーID=50
+エラー発生: ユーザー登録に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-15 14:01:47
+POST データ: {"action":"edel_square_process_subscription","nonce":"15e349c238","payment_token":"cnon:CA4SEPZIfUPvpBuNIh_JMpFnxd0YASgC","email":"ru_ya_ru27@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru27@yahoo.co.jp
+既にログイン中: ユーザーID=50
+エラー発生: ユーザー登録に失敗しました。
+トレース: #0 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(324): EdelSquarePaymentProSubscriptions->process_subscription('')
+#1 /Users/yabea/Local Sites/edel/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/yabea/Local Sites/edel/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/yabea/Local Sites/edel/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_edel_sq...')
+#4 {main}
+サブスクリプション処理開始: 2025-05-15 14:03:13
+POST データ: {"action":"edel_square_process_subscription","nonce":"15e349c238","payment_token":"cnon:CA4SEBwYio2kK9FnXE3X4ySHHXoYASgC","email":"ru_ya_ru28@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru28@yahoo.co.jp
+既にログイン中: ユーザーID=50
+ユーザーID: 50
+プラン作成: plan_68257591111fb, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 26
+顧客ID: F0SX2Q8EP75CQM6M51B0X2GF6R
+初回決済結果: {"id":"LV8I5JrwLd14q5Z15itwmRGTlVBZY","created_at":"2025-05-15T05:03:14.218Z","updated_at":"2025-05-15T05:03:14.457Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T05:03:14.218Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T05:03:14.348Z","captured_at":"2025-05-15T05:03:14.458Z"}},"location_id":"LA6DW2NR4880C","order_id":"s3VP5LiOTpMjVqHjEkjXDHstrWWZY","customer_id":"F0SX2Q8EP75CQM6M51B0X2GF6R","risk_evaluation":{"created_at":"2025-05-15T05:03:14.349Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"LV8I","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/LV8I5JrwLd14q5Z15itwmRGTlVBZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"bx3toV27lu1eHtNzRtWoYF6aPGEOZRGHezCjLopht1N6o"}
+サブスクリプション情報: ID=sub_68257592e3dda, 開始=2025-05-15 14:03:14, 次回請求=2025-05-16 14:03:14
+サブスクリプション保存結果: 22
+初回決済成功: 支払いID=LV8I5JrwLd14q5Z15itwmRGTlVBZY
+決済履歴保存結果: 27
+メール通知処理開始: サブスクリプションID=sub_68257592e3dda, メール=ru_ya_ru28@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68257592e3dda","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 14:10:46
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEO-NJ9X0E6BGpUpxFSLjKL0YASgC","email":"ru_ya_ru40@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru40@yahoo.co.jp
+新規ユーザー作成: ID=51, メール=ru_ya_ru40@yahoo.co.jp
+ユーザーID: 51
+プラン作成: plan_68257756cb234, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 27
+顧客ID: FTWAZGGQKBT6NQA1TKXKKJCJF8
+初回決済結果: {"id":"5ONCiZ79OR5DisFoicUEYWkhqlSZY","created_at":"2025-05-15T05:10:48.240Z","updated_at":"2025-05-15T05:10:48.476Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T05:10:48.240Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T05:10:48.369Z","captured_at":"2025-05-15T05:10:48.476Z"}},"location_id":"LA6DW2NR4880C","order_id":"UdCRjUDYy2PMesfBbCwyvQ51bGEZY","customer_id":"FTWAZGGQKBT6NQA1TKXKKJCJF8","risk_evaluation":{"created_at":"2025-05-15T05:10:48.369Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"5ONC","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/5ONCiZ79OR5DisFoicUEYWkhqlSZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"x9aMp9Sd7v8QzXnb1L8Ts4AbQCJitH8JqjxYQS9r2Iy6o"}
+サブスクリプション情報: ID=sub_68257758effb2, 開始=2025-05-15 14:10:48, 次回請求=2025-05-16 14:10:48
+サブスクリプション保存結果: 23
+初回決済成功: 支払いID=5ONCiZ79OR5DisFoicUEYWkhqlSZY
+決済履歴保存結果: 28
+メール通知処理開始: サブスクリプションID=sub_68257758effb2, メール=ru_ya_ru40@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68257758effb2","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 14:13:02
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEETtmL5xOW4MB88eVpy0bLsYASgC","email":"ru_ya_ru42@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru42@yahoo.co.jp
+新規ユーザー作成: ID=52, メール=ru_ya_ru42@yahoo.co.jp
+ログイン情報メール送信エラー: EdelSquarePaymentProShortcodeクラスが見つかりません
+ユーザーID: 52
+プラン作成: plan_682577de5a607, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 28
+顧客ID: DVBGHBNMNJ9V1DN7JRC2G9E530
+初回決済結果: {"id":"rZEflfpCCekl7KH3x5HY4KcWk2dZY","created_at":"2025-05-15T05:13:03.588Z","updated_at":"2025-05-15T05:13:03.834Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T05:13:03.588Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T05:13:03.718Z","captured_at":"2025-05-15T05:13:03.834Z"}},"location_id":"LA6DW2NR4880C","order_id":"WCkdPhUKueOYgbXVK1r4kVWKX9NZY","customer_id":"DVBGHBNMNJ9V1DN7JRC2G9E530","risk_evaluation":{"created_at":"2025-05-15T05:13:03.718Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"rZEf","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/rZEflfpCCekl7KH3x5HY4KcWk2dZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"6QP5dF5uJUf1O2H5303zPwUaK9ATA8xX3GJrhYwoNrI6o"}
+サブスクリプション情報: ID=sub_682577e062773, 開始=2025-05-15 14:13:04, 次回請求=2025-05-16 14:13:04
+サブスクリプション保存結果: 24
+初回決済成功: 支払いID=rZEflfpCCekl7KH3x5HY4KcWk2dZY
+決済履歴保存結果: 29
+メール通知処理開始: サブスクリプションID=sub_682577e062773, メール=ru_ya_ru42@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_682577e062773","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-15 14:15:08
+POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a","payment_token":"cnon:CA4SEBZn2LtkN4oU6d63eYE3V1QYASgC","email":"ru_ya_ru44@yahoo.co.jp","plan_id":"","amount":"400","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=ru_ya_ru44@yahoo.co.jp
+新規ユーザー作成: ID=53, メール=ru_ya_ru44@yahoo.co.jp
+ログイン情報メール送信開始: ID=53, パスワード=g0D***
+ログイン情報メール送信結果: 成功
+ユーザーID: 53
+プラン作成: plan_6825785c6e578, 金額: 400, 名前: プレミアムプラン
+プラン保存結果: 29
+顧客ID: FPPKT9X4Y7T267483D93N5G3PR
+初回決済結果: {"id":"xEyeASVet18uMKX2j9mn6VsYzIbZY","created_at":"2025-05-15T05:15:09.693Z","updated_at":"2025-05-15T05:15:09.947Z","amount_money":{"amount":400,"currency":"JPY"},"total_money":{"amount":400,"currency":"JPY"},"approved_money":{"amount":400,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-05-22T05:15:09.693Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-15T05:15:09.826Z","captured_at":"2025-05-15T05:15:09.947Z"}},"location_id":"LA6DW2NR4880C","order_id":"i6dvuqzNPNgJOphJbYKyOG2NtERZY","customer_id":"FPPKT9X4Y7T267483D93N5G3PR","risk_evaluation":{"created_at":"2025-05-15T05:15:09.826Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f3 - \u521d\u56de\u6c7a\u6e08","receipt_number":"xEye","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/xEyeASVet18uMKX2j9mn6VsYzIbZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"VejilQTSWdcxbLZ9CrKJzNGkrHqvNCIl7CfUV9ajstT6o"}
+サブスクリプション情報: ID=sub_6825785e5674a, 開始=2025-05-15 14:15:10, 次回請求=2025-05-16 14:15:10
+サブスクリプション保存結果: 25
+初回決済成功: 支払いID=xEyeASVet18uMKX2j9mn6VsYzIbZY
+決済履歴保存結果: 30
+メール通知処理開始: サブスクリプションID=sub_6825785e5674a, メール=ru_ya_ru44@yahoo.co.jp
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825785e5674a","redirect_url":"https:\/\/edel.local\/square-myac\/"}

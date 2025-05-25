@@ -1,0 +1,710 @@
+/* 共通スタイル */
+.edel-square-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.edel-square-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.edel-square-form-group input[type='email'],
+.edel-square-form-group input[type='password'] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.edel-square-submit-button {
+    background-color: #1e4b7a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.edel-square-submit-button:hover {
+    background-color: #15365a;
+}
+
+.edel-square-submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.edel-square-message {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: #f0f8ff;
+    border: 1px solid #c1e0fe;
+    border-radius: 4px;
+}
+
+.edel-square-error {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: #fff0f0;
+    border: 1px solid #ffc1c1;
+    color: #cc0000;
+    border-radius: 4px;
+}
+
+.edel-square-success {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: #f0fff0;
+    border: 1px solid #c1fec1;
+    color: #008800;
+    border-radius: 4px;
+}
+
+/* 決済フォーム用スタイル */
+.edel-square-payment-form-container,
+.edel-square-subscription-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edel-square-payment-form h3,
+.edel-square-subscription-form h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.edel-square-amount {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* サブスクリプション固有のスタイル */
+.edel-square-description {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.edel-square-trial {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e88e5;
+    font-weight: bold;
+}
+
+.edel-square-subscription-details {
+    margin-bottom: 1.5rem;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.edel-square-subscription-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.edel-square-subscription-details li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.edel-square-subscription-details li:last-child {
+    border-bottom: none;
+}
+
+.edel-square-subscription-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edel-square-cancel-subscription {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.edel-square-cancel-subscription:hover {
+    background-color: #e5e5e5;
+}
+
+.edel-square-update-payment-method {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1e4b7a;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.edel-square-update-payment-method:hover {
+    background-color: #15365a;
+}
+
+/* サブスクリプション一覧テーブル */
+.edel-square-subscriptions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.edel-square-subscriptions-table th,
+.edel-square-subscriptions-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.edel-square-subscriptions-table th {
+    background-color: #f5f5f5;
+}
+
+.edel-square-subscription-status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.edel-square-status-active {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.edel-square-status-canceling {
+    background-color: #fff8e1;
+    color: #f57c00;
+}
+
+.edel-square-status-canceled {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.edel-square-status-paused {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+/* マイアカウントページ拡張 */
+.edel-square-subscription-section {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.edel-square-subscription-section h3 {
+    margin-top: 0;
+}
+
+.edel-square-payment-method-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display: none;
+}
+
+#card-container {
+    width: 100%;
+    min-height: 90px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    background: #fff;
+    position: relative;
+}
+
+/* Squareフォームのスタイル上書き */
+.sq-card-wrapper {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* フォームの重複表示を防止 */
+.sq-card-wrapper::before {
+    content: none !important;
+}
+
+/* ラベルの重複表示を防止 */
+.sq-label {
+    display: none !important;
+}
+
+.edel-square-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+}
+
+.edel-square-checkbox-label input[type='checkbox'] {
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.edel-square-success-message {
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* カード自動入力ボタン */
+#edel-square-card-container {
+    position: relative;
+}
+
+.button-credit-card-autofill {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.button-credit-card-autofill .link {
+    margin-left: 4px;
+    font-size: 0.7rem;
+    color: #4aa4ff;
+}
+
+/* マイアカウントページ用スタイル */
+.edel-square-myaccount {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.edel-square-user-info {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.edel-square-payment-history {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.edel-square-payment-history th,
+.edel-square-payment-history td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.edel-square-payment-history th {
+    background-color: #f5f5f5;
+}
+
+.edel-square-logout {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.edel-square-logout-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.edel-square-logout-link:hover {
+    background-color: #e5e5e5;
+}
+
+/* ログインフォーム用スタイル */
+.edel-square-form-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.edel-square-form-links a {
+    text-decoration: none;
+    color: #1e4b7a;
+}
+
+.edel-square-form-links a:hover {
+    text-decoration: underline;
+}
+
+/* Square生成のカードフォームのスタイル調整 */
+#card-container {
+    width: 100%;
+    min-height: 90px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+/* 重複表示を防止するためのスタイル */
+.sq-input {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Squareのカード番号入力フィールドのスタイル */
+.sq-card-number {
+    margin-bottom: 10px !important;
+}
+
+/* Squareのexpiry/CVVフィールドのスタイル */
+.sq-expiration-date,
+.sq-cvv {
+    display: inline-block;
+    width: 48% !important;
+}
+
+.sq-expiration-date {
+    margin-right: 4% !important;
+}
+
+/* 決済履歴・サブスクリプション履歴タブ */
+.edel-square-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.edel-square-tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-right: 0.5rem;
+    background-color: #f5f5f5;
+}
+
+.edel-square-tab:hover {
+    background-color: #e5e5e5;
+}
+
+.edel-square-tab-active {
+    background-color: #fff;
+    border-color: #ddd;
+    margin-bottom: -1px;
+    position: relative;
+}
+
+.edel-square-tab-active:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background-color: #fff;
+}
+
+.edel-square-tab-content {
+    display: none;
+}
+
+.edel-square-tab-content-active {
+    display: block;
+}
+
+/* サブスクリプション詳細 */
+.edel-square-subscription-info {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.edel-square-subscription-info h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.edel-square-subscription-meta {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.edel-square-subscription-meta-item {
+    flex: 0 0 50%;
+    margin-bottom: 0.75rem;
+}
+
+.edel-square-subscription-meta-label {
+    font-weight: bold;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.edel-square-subscription-meta-value {
+    margin-top: 0.25rem;
+}
+
+/* サブスクリプション支払い履歴 */
+.edel-square-subscription-payments {
+    margin-top: 1.5rem;
+}
+
+.edel-square-subscription-payments h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.edel-square-payment-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.edel-square-payment-badge-completed {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.edel-square-payment-badge-pending {
+    background-color: #fff8e1;
+    color: #f57c00;
+}
+
+.edel-square-payment-badge-failed {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+/* 支払い方法表示 */
+.edel-square-payment-method {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.edel-square-card-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.edel-square-card-details {
+    flex: 1;
+}
+
+.edel-square-card-number {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.edel-square-card-expiry {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .edel-square-subscription-meta-item {
+        flex: 0 0 100%;
+    }
+
+    .edel-square-subscription-actions {
+        flex-direction: column;
+    }
+
+    .edel-square-cancel-subscription,
+    .edel-square-update-payment-method {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    .edel-square-tabs {
+        flex-direction: column;
+    }
+
+    .edel-square-tab {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .edel-square-tab-active:after {
+        display: none;
+    }
+}
+
+.edel-square-myaccount {
+    margin: 20px 0;
+}
+
+.subscription-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.subscription-details {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.subscription-details th {
+    text-align: left;
+    padding: 5px 10px 5px 0;
+    width: 30%;
+    font-weight: bold;
+}
+
+.status-active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-paused {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: red;
+}
+
+.subscription-warning {
+    background-color: #fff8e5;
+    border-left: 4px solid #ffb900;
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+
+.subscription-actions {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.cancel-button {
+    color: #a00 !important;
+    border-color: #a00 !important;
+    background: pink !important;
+    padding: 10px !important;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    opacity: 0.6;
+}
+
+.edel-square-payment-history {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.edel-square-payment-history th,
+.edel-square-payment-history td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.edel-square-payment-history th {
+    background-color: #f5f5f5;
+}
+
+.edel-square-message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.edel-square-message.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.edel-square-message.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+.edel-square-payment-form .readonly-field {
+    background-color: #f9f9f9;
+    color: #666;
+    cursor: not-allowed;
+    border: 1px solid #ddd;
+}
+
+/* サブスクリプション成功メッセージのスタイル */
+#edel-square-subscription-success {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    color: #155724;
+}
+
+#edel-square-subscription-success .edel-square-success-message {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#edel-square-subscription-success .redirect-info {
+    margin-top: 15px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* エラーメッセージのスタイル */
+.edel-square-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* 処理中メッセージのスタイル */
+.edel-square-message {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}

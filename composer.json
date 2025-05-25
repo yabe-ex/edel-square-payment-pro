@@ -1,0 +1,20 @@
+{
+  "name": "edel/square-payment-lite",
+  "description": "WordPressでSquare決済を実装するプラグイン",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=7.2 <8.2",
+    "square/square": "25.2.0.20230315"
+  },
+  "autoload": {
+    "psr-4": {
+      "EdelSquarePaymentLite\\": "inc/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.1.32"
+    }
+  }
+}
