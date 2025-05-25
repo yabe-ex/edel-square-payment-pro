@@ -1,0 +1,76 @@
+/* WordPressデフォルトの縞模様を完全に無効化 */
+.wp-list-table tbody tr:nth-child(even),
+.wp-list-table tbody tr.alternate,
+.wp-list-table tbody tr:nth-child(odd) {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* カスタム縞模様のスタイル（より強力な指定） */
+tbody .subscription-row.edel-stripe-even {
+    background-color: #f9f9f9 !important;
+    background: #f9f9f9 !important;
+}
+
+tbody .subscription-row.edel-stripe-odd {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+/* キャンセル済み行の縞模様調整 */
+tbody .subscription-row[data-status='CANCELED'].edel-stripe-even {
+    background-color: #f0f0f0 !important;
+    background: #f0f0f0 !important;
+    opacity: 0.7;
+}
+
+tbody .subscription-row[data-status='CANCELED'].edel-stripe-odd {
+    background-color: #f5f5f5 !important;
+    background: #f5f5f5 !important;
+    opacity: 0.7;
+}
+
+/* キャンセル済み行のスタイル */
+.subscription-row[data-status='CANCELED'] {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.subscription-row[data-status='CANCELED'].hidden {
+    display: none !important;
+}
+
+/* ステータス表示の色分け */
+.status-canceled {
+    color: #d63638 !important;
+    font-weight: bold;
+}
+
+.status-active {
+    color: #00a32a !important;
+    font-weight: bold;
+}
+
+.status-canceling {
+    color: #ff8c00 !important;
+    font-weight: bold;
+}
+
+.status-past-due {
+    color: #e65100 !important;
+    font-weight: bold;
+}
+
+/* フィルターコントロールのスタイル */
+.subscription-filter-controls label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.subscription-filter-controls input[type='checkbox'] {
+    transform: scale(1.1);
+}
+
+/* キャンセル済み行のアクション無効化 */
+.subscription-row[data-status='CANCELED'] .row-actions .cancel {
+    display: none;
+}

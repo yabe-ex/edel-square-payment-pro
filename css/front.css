@@ -22,7 +22,7 @@
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    font-size: 15px;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
@@ -707,4 +707,444 @@
     padding: 10px 15px;
     margin: 10px 0;
     border-radius: 4px;
+}
+
+/* ハイライト効果のスタイル */
+.highlight-form {
+    border: 2px solid #0073aa !important;
+    border-radius: 4px !important;
+    background-color: #f0f8ff !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.subscription-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.subscription-warning p {
+    margin: 0 0 10px 0;
+}
+
+.subscription-warning p:last-child {
+    margin-bottom: 0;
+}
+
+.card-update-scroll-link {
+    text-decoration: none !important;
+}
+
+.card-update-scroll-link:hover {
+    text-decoration: none !important;
+}
+
+.edel-square-subscriptions {
+    margin: 20px 0;
+}
+
+.subscription-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.subscription-details {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.subscription-details th {
+    text-align: left;
+    padding: 5px 10px 5px 0;
+    width: 30%;
+}
+
+.status-active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-paused {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: red;
+}
+
+.card-update-section {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.square-card-container {
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.card-errors {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.subscription-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.edel-square-myaccount {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.edel-square-message {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.edel-square-message.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.edel-square-message.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.edel-square-user-info {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.subscription-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.subscription-details {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.subscription-details th,
+.subscription-details td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.subscription-details th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    width: 150px;
+}
+
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-paused {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.subscription-notice {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.subscription-notice p {
+    margin: 5px 0;
+}
+
+.subscription-actions {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.cancel-button {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.cancel-button:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+}
+
+.edel-square-payment-history {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.edel-square-payment-history th,
+.edel-square-payment-history td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.edel-square-payment-history th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.edel-square-logout {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.update-payment-button {
+    background-color: #0073aa !important;
+    border-color: #0073aa !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.update-payment-button:hover {
+    background-color: #005177 !important;
+    border-color: #005177 !important;
+    color: #fff !important;
+}
+
+.subscription-actions {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.subscription-notice {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.subscription-notice p {
+    margin: 5px 0;
+}
+
+/* 既存のスタイルはそのまま */
+.edel-square-myaccount {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.edel-square-message {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.edel-square-message.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.edel-square-message.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.edel-square-user-info {
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.subscription-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.subscription-details {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.subscription-details th,
+.subscription-details td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.subscription-details th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    width: 150px;
+}
+
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-paused {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.cancel-button {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.cancel-button:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+}
+
+.edel-square-payment-history {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.edel-square-payment-history th,
+.edel-square-payment-history td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.edel-square-payment-history th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.edel-square-logout {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.edel-square-card-update {
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.subscription-info {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.subscription-info h3 {
+    margin-top: 0;
+    color: #495057;
+}
+
+.card-update-form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.square-card-container {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    min-height: 60px;
+    background: #fff;
+}
+
+.card-errors {
+    color: #dc3545;
+    margin: 15px 0;
+    min-height: 20px;
+    font-weight: 500;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-paused {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+#update-card-button {
+    background-color: #007cba !important;
+    border-color: #007cba !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+}
+
+#update-card-button:hover {
+    background-color: #005a87 !important;
+    border-color: #005a87 !important;
+}
+
+#update-card-button:disabled {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    cursor: not-allowed !important;
 }

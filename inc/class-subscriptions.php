@@ -486,6 +486,14 @@ class EdelSquarePaymentProSubscriptions {
                 'redirect_url' => $myaccount_url,
             );
 
+            do_action(
+                'edel_square_subscription_completed',
+                $user_id,                    // ユーザーID
+                $subscription_data,          // サブスクリプションデータ (変数名要確認)
+                $plan_id,                    // プランID (変数名要確認)
+                $response                    // レスポンス情報
+            );
+
             file_put_contents(
                 EDEL_SQUARE_PAYMENT_PRO_PATH . '/subscription-debug.log',
                 "処理成功: " . json_encode($response) . "\n",
@@ -724,7 +732,7 @@ class EdelSquarePaymentProSubscriptions {
 
         // ログインチェック
         if (!is_user_logged_in()) {
-            wp_redirect(add_query_arg('error', 'not_logged_in', home_url('/my-account/')));
+            $this->redirect_to_myaccount('error', 'not_logged_in');
             exit;
         }
 
@@ -733,7 +741,7 @@ class EdelSquarePaymentProSubscriptions {
         error_log('Edel Square Payment Pro: キャンセル処理開始 - サブスクリプションID: ' . $subscription_id);
 
         if (empty($subscription_id)) {
-            wp_redirect(add_query_arg('error', 'no_subscription_id', home_url('/my-account/')));
+            $this->redirect_to_myaccount('error', 'no_subscription_id');
             exit;
         }
 
@@ -742,14 +750,14 @@ class EdelSquarePaymentProSubscriptions {
         $subscription = EdelSquarePaymentProDB::get_subscription($subscription_id);
 
         if (!$subscription) {
-            wp_redirect(add_query_arg('error', 'subscription_not_found', home_url('/my-account/')));
+            $this->redirect_to_myaccount('error', 'subscription_not_found');
             exit;
         }
 
         // ユーザー権限チェック - オブジェクトとして扱う
         $user_id = get_current_user_id();
         if ($subscription->user_id != $user_id && !current_user_can('manage_options')) {
-            wp_redirect(add_query_arg('error', 'permission_denied', home_url('/my-account/')));
+            $this->redirect_to_myaccount('error', 'permission_denied');
             exit;
         }
 
@@ -757,35 +765,62 @@ class EdelSquarePaymentProSubscriptions {
         $update_data = array(
             'subscription_id' => $subscription_id,
             'updated_at' => $now,
-            'status' => 'CANCELING',
-            'cancel_at' => $subscription->current_period_end
+            'status' => 'CANCELED',
+            'canceled_at' => $now
         );
 
         // サブスクリプション情報を更新
         if (EdelSquarePaymentProDB::save_subscription($update_data)) {
-            // メール通知
+            // メール通知（既存メソッドを使用）
             $this->send_subscription_cancellation_email($subscription_id);
+
+            // サブスクリプションキャンセル完了フック
+            do_action(
+                'edel_square_subscription_cancelled',
+                $subscription->user_id,      // ユーザーID
+                $subscription_id,            // サブスクリプションID
+                $subscription->plan_id       // プランID
+            );
+
             $message = 'cancel_success';
         } else {
             $message = 'update_failed';
         }
 
-        // クエリパラメータを使ってメッセージを渡す
-        // 注意: マイアカウントページのURLを適切に指定する必要があります
-        $myaccount_page_id = get_option('edel_square_myaccount_page');
-        if ($myaccount_page_id) {
-            $redirect_url = get_permalink($myaccount_page_id);
-        } else {
-            $redirect_url = home_url('/my-account/');
-        }
-
-        wp_redirect(add_query_arg('result', $message, $redirect_url));
+        $this->redirect_to_myaccount('result', $message);
         exit;
     }
 
+    /**
+     * マイアカウントページへのリダイレクト
+     */
+    private function redirect_to_myaccount($param_name, $param_value) {
+        // 設定からマイアカウントページを取得
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-settings.php';
+        $settings = EdelSquarePaymentProSettings::get_settings();
+
+        $redirect_url = home_url('/');
+
+        if (!empty($settings['myaccount_page'])) {
+            $redirect_url = get_permalink((int)$settings['myaccount_page']);
+        }
+
+        if (!$redirect_url) {
+            $redirect_url = home_url('/');
+        }
+
+        wp_redirect(add_query_arg($param_name, $param_value, $redirect_url));
+    }
+
+    /**
+     * 設定を使用したサブスクリプションキャンセル通知メールを送信
+     */
     public function send_subscription_cancellation_email($subscription_id) {
         require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-db.php';
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-settings.php';
+
         $subscription = EdelSquarePaymentProDB::get_subscription($subscription_id);
+        $settings = EdelSquarePaymentProSettings::get_settings();
 
         if (!$subscription) {
             error_log('Edel Square Payment Pro: キャンセルメール送信失敗 - サブスクリプションが見つかりません: ' . $subscription_id);
@@ -803,41 +838,74 @@ class EdelSquarePaymentProSubscriptions {
         $plan = EdelSquarePaymentProDB::get_plan($subscription->plan_id);
         $plan_name = $plan ? $plan['name'] : '不明なプラン';
 
-        // 管理者メールアドレス
-        $admin_email = get_option('admin_email');
-
-        // メール件名
-        $subject = 'サブスクリプションがキャンセルされました';
-
-        // メール本文
-        $message = sprintf(
-            "こんにちは、%sさん\n\n" .
-                "以下のサブスクリプションがキャンセルされました：\n\n" .
-                "プラン: %s\n" .
-                "金額: %s %s\n" .
-                "キャンセル日: %s\n\n" .
-                "ご質問がありましたら、お気軽にお問い合わせください。\n\n" .
-                "ありがとうございました。",
-            $user->display_name,
-            $plan_name,
-            number_format($subscription->amount),
-            $subscription->currency,
-            date_i18n('Y年m月d日', strtotime('now'))
+        // 置換データ
+        $replace_data = array(
+            'item_name' => $plan_name,
+            'amount' => $subscription->amount,
+            'customer_email' => $user->user_email,
+            'subscription_id' => $subscription_id,
+            'cancel_date' => date_i18n('Y年m月d日 H時i分'),
+            'cancellation_type' => 'ユーザーによる手動キャンセル',
+            'user_name' => $user->display_name
         );
 
-        // ヘッダー
-        $headers = array(
-            'From: ' . get_bloginfo('name') . ' <' . $admin_email . '>',
+        // 管理者向けメール
+        if (!empty($settings['admin_email'])) {
+            $admin_subject = isset($settings['subscription_cancel_admin_email_subject']) ?
+                EdelSquarePaymentProSettings::replace_placeholders($settings['subscription_cancel_admin_email_subject'], $replace_data) :
+                get_bloginfo('name') . ' - サブスクリプションがキャンセルされました';
+
+            $admin_body = isset($settings['subscription_cancel_admin_email_body']) ?
+                EdelSquarePaymentProSettings::replace_placeholders($settings['subscription_cancel_admin_email_body'], $replace_data) :
+                sprintf(
+                    "以下のサブスクリプションがキャンセルされました。\n\nプラン名: %s\n金額: %s %s\n購入者メール: %s\nサブスクリプションID: %s\nキャンセル日: %s\nキャンセルタイプ: %s\n\n",
+                    $plan_name,
+                    number_format($subscription->amount),
+                    $subscription->currency,
+                    $user->user_email,
+                    $subscription_id,
+                    date_i18n('Y年m月d日 H時i分'),
+                    'ユーザーによる手動キャンセル'
+                );
+
+            $admin_headers = array(
+                'From: ' . get_bloginfo('name') . ' <' . get_option('admin_email') . '>',
+                'Content-Type: text/plain; charset=UTF-8'
+            );
+
+            wp_mail($settings['admin_email'], $admin_subject, $admin_body, $admin_headers);
+        }
+
+        // 購入者向けメール
+        $customer_subject = isset($settings['subscription_cancel_customer_email_subject']) ?
+            EdelSquarePaymentProSettings::replace_placeholders($settings['subscription_cancel_customer_email_subject'], $replace_data) :
+            get_bloginfo('name') . ' - サブスクリプションのキャンセルを承りました';
+
+        $customer_body = isset($settings['subscription_cancel_customer_email_body']) ?
+            EdelSquarePaymentProSettings::replace_placeholders($settings['subscription_cancel_customer_email_body'], $replace_data) :
+            sprintf(
+                "%s様\n\n以下のサブスクリプションのキャンセルを承りました。\n\nプラン名: %s\n金額: %s %s\nサブスクリプションID: %s\nキャンセル日: %s\nキャンセルタイプ: %s\n\nご利用ありがとうございました。\n%s\n\n",
+                $user->display_name,
+                $plan_name,
+                number_format($subscription->amount),
+                $subscription->currency,
+                $subscription_id,
+                date_i18n('Y年m月d日 H時i分'),
+                'ユーザーによる手動キャンセル',
+                get_bloginfo('url')
+            );
+
+        $customer_headers = array(
+            'From: ' . get_bloginfo('name') . ' <' . get_option('admin_email') . '>',
             'Content-Type: text/plain; charset=UTF-8'
         );
 
-        // メール送信
-        $sent = wp_mail($user->user_email, $subject, $message, $headers);
+        $sent = wp_mail($user->user_email, $customer_subject, $customer_body, $customer_headers);
 
         if ($sent) {
-            error_log('Edel Square Payment Pro: キャンセルメール送信成功 - サブスクリプションID: ' . $subscription_id);
+            error_log('Edel Square Payment Pro: サブスクリプションキャンセル通知メールを送信しました - サブスクリプションID: ' . $subscription_id);
         } else {
-            error_log('Edel Square Payment Pro: キャンセルメール送信失敗 - サブスクリプションID: ' . $subscription_id);
+            error_log('Edel Square Payment Pro: サブスクリプションキャンセル通知メールの送信に失敗しました - サブスクリプションID: ' . $subscription_id);
         }
 
         return $sent;

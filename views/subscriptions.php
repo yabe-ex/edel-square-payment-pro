@@ -20,6 +20,26 @@ $total_pages = ceil($total_items / $per_page);
     <h1 class="wp-heading-inline">サブスクリプション一覧</h1>
     <hr class="wp-header-end">
 
+    <div class="subscription-filter-controls" style="margin: 15px 0 20px 0; padding: 12px; background: #f9f9f9; border-left: 4px solid #0073aa; border-radius: 4px;">
+        <label style="display: inline-flex; align-items: center; gap: 8px; font-weight: 500;">
+            <input type="checkbox" id="show-cancelled-subscriptions" checked>
+            <span>キャンセル済みサブスクリプションを表示</span>
+        </label>
+        <span style="margin-left: 20px; color: #666; font-size: 13px;">
+            (<span id="active-count">0</span>件 有効, <span id="cancelled-count">0</span>件 キャンセル済み)
+        </span>
+    </div>
+
+    <?php
+    if (isset($_GET['canceled'])) {
+        if ($_GET['canceled'] == '1') {
+            echo '<div class="notice notice-success is-dismissible"><p>サブスクリプションがキャンセルされました。</p></div>';
+        } else {
+            echo '<div class="notice notice-error is-dismissible"><p>キャンセル処理に失敗しました。</p></div>';
+        }
+    }
+    ?>
+
     <?php if (isset($_GET['updated'])): ?>
         <div class="notice notice-success is-dismissible">
             <p>サブスクリプションが更新されました。</p>
@@ -87,13 +107,18 @@ $total_pages = ceil($total_items / $per_page);
                 </tr>
             <?php else: ?>
                 <?php foreach ($subscriptions as $subscription): ?>
-                    <tr>
+                    <tr data-status="<?php echo esc_attr($subscription->status); ?>" class="subscription-row">
                         <td class="column-id">
                             <strong><a href="<?php echo admin_url('admin.php?page=edel-square-payment-pro-edit-subscription&subscription_id=' . $subscription->subscription_id); ?>"><?php echo esc_html($subscription->subscription_id); ?></a></strong>
                             <div class="row-actions">
                                 <span class="edit"><a href="<?php echo admin_url('admin.php?page=edel-square-payment-pro-edit-subscription&subscription_id=' . $subscription->subscription_id); ?>">詳細</a> | </span>
-                                <span class="cancel"><a href="<?php echo wp_nonce_url(admin_url('admin.php?page=edel-square-payment-pro-subscriptions&action=cancel&id=' . $subscription->subscription_id), 'cancel-subscription-' . $subscription->subscription_id); ?>" class="submitdelete">キャンセル</a></span>
-                            </div>
+                                <span class="cancel">
+                                    <form method="post" action="" style="display: inline;" onsubmit="return confirm('このサブスクリプションをキャンセルしてもよろしいですか？');">
+                                        <input type="hidden" name="subscription_id" value="<?php echo esc_attr($subscription->subscription_id); ?>">
+                                        <?php wp_nonce_field('cancel_subscription_list_' . $subscription->subscription_id, 'cancel_list_nonce'); ?>
+                                        <button type="submit" name="cancel_subscription_from_list" class="submitdelete" style="background: none; border: none; color: #a00; cursor: pointer; padding: 0; text-decoration: underline;">キャンセル</button>
+                                    </form>
+                                </span>
                         </td>
                         <td class="column-email">
                             <?php

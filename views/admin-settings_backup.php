@@ -137,7 +137,45 @@
                         </td>
                     </tr>
                 </table>
+
+                <h3>サブスクリプションキャンセル通知メール</h3>
+
+                <h4>管理者向けキャンセル通知</h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">件名</th>
+                        <td>
+                            <input type="text" name="subscription_cancel_admin_email_subject" class="regular-text" value="<?php echo esc_attr($settings['subscription_cancel_admin_email_subject']); ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">本文</th>
+                        <td>
+                            <textarea name="subscription_cancel_admin_email_body" rows="8" class="large-text"><?php echo esc_textarea($settings['subscription_cancel_admin_email_body']); ?></textarea>
+                            <p class="description">利用可能なプレースホルダー: {item_name}, {amount}, {customer_email}, {subscription_id}, {cancel_date}, {cancellation_type}, {user_name}, {site_name}, {site_url}</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <h4>購入者向けキャンセル通知</h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">件名</th>
+                        <td>
+                            <input type="text" name="subscription_cancel_customer_email_subject" class="regular-text" value="<?php echo esc_attr($settings['subscription_cancel_customer_email_subject']); ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">本文</th>
+                        <td>
+                            <textarea name="subscription_cancel_customer_email_body" rows="8" class="large-text"><?php echo esc_textarea($settings['subscription_cancel_customer_email_body']); ?></textarea>
+                            <p class="description">利用可能なプレースホルダー: {item_name}, {amount}, {subscription_id}, {cancel_date}, {cancellation_type}, {user_name}, {site_name}, {site_url}</p>
+                        </td>
+                    </tr>
+                </table>
             </div>
+
+
 
             <!-- フォーム設定タブ -->
             <div id="tab-form" class="tab-content" style="display: none;">

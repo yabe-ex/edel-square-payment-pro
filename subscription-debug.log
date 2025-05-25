@@ -922,3 +922,54 @@ POST データ: {"action":"edel_square_process_subscription","nonce":"ce8e56971a
 管理者向けメール送信結果: 成功
 購入者向けメール送信結果: 成功
 処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6825785e5674a","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-25 10:15:26
+POST データ: {"action":"edel_square_process_subscription","nonce":"b2aecac716","payment_token":"cnon:CA4SEMDGLsYYC6F8EbPYb_4iQDMYASgC","email":"info@edel.local","plan_id":"","amount":"300","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f30524","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_68326f2eb39ba, 金額: 300, 名前: プレミアムプラン0524
+プラン保存結果: 33
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"HbSl96nYPaSH4aL4ZgBLhF52b09YY","created_at":"2025-05-25T01:15:27.803Z","updated_at":"2025-05-25T01:15:28.104Z","amount_money":{"amount":300,"currency":"JPY"},"total_money":{"amount":300,"currency":"JPY"},"approved_money":{"amount":300,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-06-01T01:15:27.803Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-25T01:15:27.969Z","captured_at":"2025-05-25T01:15:28.104Z"}},"location_id":"LA6DW2NR4880C","order_id":"0NYeWZe9G8WcHv1O7ncAsKKHy3JZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-25T01:15:27.969Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f30524 - \u521d\u56de\u6c7a\u6e08","receipt_number":"HbSl","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/HbSl96nYPaSH4aL4ZgBLhF52b09YY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"jSpcQj29dM91x76JGeZlg1tDBJTuxMIhbHRbUe6mnme6o"}
+サブスクリプション情報: ID=sub_68326f30956d3, 開始=2025-05-25 10:15:28, 次回請求=2025-05-26 10:15:28
+サブスクリプション保存結果: 29
+初回決済成功: 支払いID=HbSl96nYPaSH4aL4ZgBLhF52b09YY
+決済履歴保存結果: 38
+メール通知処理開始: サブスクリプションID=sub_68326f30956d3, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_68326f30956d3","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-25 10:29:40
+POST データ: {"action":"edel_square_process_subscription","nonce":"b2aecac716","payment_token":"cnon:CA4SEIwPVTTfxYugyw_bUPXOnJ4YASgC","email":"info@edel.local","plan_id":"","amount":"300","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f30524","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_683272849264d, 金額: 300, 名前: プレミアムプラン0524
+プラン保存結果: 34
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"14LSsDRMb2pwJ9uPge8tggxRNRHZY","created_at":"2025-05-25T01:29:41.430Z","updated_at":"2025-05-25T01:29:41.685Z","amount_money":{"amount":300,"currency":"JPY"},"total_money":{"amount":300,"currency":"JPY"},"approved_money":{"amount":300,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-06-01T01:29:41.430Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2025,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-25T01:29:41.571Z","captured_at":"2025-05-25T01:29:41.685Z"}},"location_id":"LA6DW2NR4880C","order_id":"4Vbkj8VxtohyWlISNFPrTeHR4FGZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-25T01:29:41.572Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f30524 - \u521d\u56de\u6c7a\u6e08","receipt_number":"14LS","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/14LSsDRMb2pwJ9uPge8tggxRNRHZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"Xwlrkac0ZWXrfzBxCbyLUjvsYh3o9j16ENmTAXaSgwS6o"}
+サブスクリプション情報: ID=sub_6832728619365, 開始=2025-05-25 10:29:42, 次回請求=2025-05-26 10:29:42
+サブスクリプション保存結果: 30
+初回決済成功: 支払いID=14LSsDRMb2pwJ9uPge8tggxRNRHZY
+決済履歴保存結果: 39
+メール通知処理開始: サブスクリプションID=sub_6832728619365, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6832728619365","redirect_url":"https:\/\/edel.local\/square-myac\/"}
+サブスクリプション処理開始: 2025-05-25 17:29:58
+POST データ: {"action":"edel_square_process_subscription","nonce":"b2aecac716","payment_token":"cnon:CA4SEAO31Tfv77UTuhF9OX2hr_kYASgC","email":"info@edel.local","plan_id":"","amount":"300","item_name":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f30524","billing_cycle":"daily","billing_interval":"1","trial_days":"0"}
+ユーザー登録処理開始: メール=info@edel.local
+既にログイン中: ユーザーID=4
+ユーザーID: 4
+プラン作成: plan_6832d506b4283, 金額: 300, 名前: プレミアムプラン0524
+プラン保存結果: 35
+顧客ID: FF0J8YBYWXJXD11ACPM0TMH1G4
+初回決済結果: {"id":"h67zEMRZAPJO8g5LNHqkwavH88OZY","created_at":"2025-05-25T08:29:59.721Z","updated_at":"2025-05-25T08:29:59.986Z","amount_money":{"amount":300,"currency":"JPY"},"total_money":{"amount":300,"currency":"JPY"},"approved_money":{"amount":300,"currency":"JPY"},"status":"COMPLETED","delay_duration":"PT168H","delay_action":"CANCEL","delayed_until":"2025-06-01T08:29:59.721Z","source_type":"CARD","card_details":{"status":"CAPTURED","card":{"card_brand":"VISA","last_4":"1111","exp_month":11,"exp_year":2027,"fingerprint":"sq-1-GBK6CFaTEqTlctPNIULh5RVSgr5uP7av4ObejycWJoKFsg9vIOx6aCT6PQQepBbIeQ","card_type":"CREDIT","prepaid_type":"NOT_PREPAID","bin":"411111"},"entry_method":"KEYED","cvv_status":"CVV_ACCEPTED","avs_status":"AVS_ACCEPTED","statement_description":"SQ *DEFAULT TEST ACCOUNT","card_payment_timeline":{"authorized_at":"2025-05-25T08:29:59.861Z","captured_at":"2025-05-25T08:29:59.986Z"}},"location_id":"LA6DW2NR4880C","order_id":"CA6yhHOA2ew5g8alS3UjzfwZhEOZY","customer_id":"FF0J8YBYWXJXD11ACPM0TMH1G4","risk_evaluation":{"created_at":"2025-05-25T08:29:59.861Z","risk_level":"NORMAL"},"note":"\u30d7\u30ec\u30df\u30a2\u30e0\u30d7\u30e9\u30f30524 - \u521d\u56de\u6c7a\u6e08","receipt_number":"h67z","receipt_url":"https:\/\/squareupsandbox.com\/receipt\/preview\/h67zEMRZAPJO8g5LNHqkwavH88OZY","application_details":{"square_product":"ECOMMERCE_API","application_id":"sandbox-sq0idb-LcLWOExsxgQfgO2tJF0ylw"},"version_token":"92NDBC6z3EqgMSXPR4GI8B343zbO6AVsOXeBTA09Grj6o"}
+サブスクリプション情報: ID=sub_6832d508976fc, 開始=2025-05-25 17:30:00, 次回請求=2025-05-26 17:30:00
+サブスクリプション保存結果: 31
+初回決済成功: 支払いID=h67zEMRZAPJO8g5LNHqkwavH88OZY
+決済履歴保存結果: 40
+メール通知処理開始: サブスクリプションID=sub_6832d508976fc, メール=info@edel.local
+管理者向けメール送信結果: 成功
+購入者向けメール送信結果: 成功
+処理成功: {"success":true,"message":"\u30b5\u30d6\u30b9\u30af\u30ea\u30d7\u30b7\u30e7\u30f3\u306e\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002<br \/>\n\u30de\u30a4\u30a2\u30ab\u30a6\u30f3\u30c8\u30da\u30fc\u30b8\u304b\u3089\u3054\u78ba\u8a8d\u3044\u305f\u3060\u3051\u307e\u3059\u3002","subscription_id":"sub_6832d508976fc","redirect_url":"https:\/\/edel.local\/square-myac\/"}

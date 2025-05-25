@@ -1,28 +1,6 @@
 jQuery(document).ready(function ($) {
     'use strict';
 
-    $('<button id="test-subscription">サブスクリプションAPIテスト</button>').insertAfter('#edel-square-subscription-submit');
-
-    // テストボタンのクリックイベント
-    $('#test-subscription').on('click', function () {
-        $.ajax({
-            url: edelSquarePaymentParams.ajaxUrl,
-            type: 'POST',
-            data: {
-                action: 'edel_square_test_subscription',
-                nonce: edelSquarePaymentParams.nonce
-            },
-            success: function (response) {
-                console.log('テスト結果:', response);
-                alert('テスト結果: ' + JSON.stringify(response));
-            },
-            error: function (xhr, status, error) {
-                console.error('テストエラー:', error);
-                alert('テストエラー: ' + error);
-            }
-        });
-    });
-
     // OneTime決済フォーム処理
     if ($('#edel-square-submit').length > 0) {
         // Square Web Payments SDKの初期化
@@ -719,28 +697,30 @@ jQuery(document).ready(function ($) {
         });
     }
 
-    // reCAPTCHA v3の処理（もし存在する場合）
-    // if (typeof edelSquareRecaptchaParams !== 'undefined' && edelSquareRecaptchaParams.siteKey) {
-    //     // reCAPTCHAの読み込みが完了しているか確認
-    //     if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.ready === 'function') {
-    //         grecaptcha.ready(function () {
-    //             try {
-    //                 // ログインページの読み込み時に実行
-    //                 grecaptcha
-    //                     .execute(edelSquareRecaptchaParams.siteKey, { action: 'login' })
-    //                     .then(function (token) {
-    //                         console.log('reCAPTCHAトークン取得成功');
-    //                         $('#edel-square-recaptcha-token').val(token);
-    //                     })
-    //                     .catch(function (error) {
-    //                         console.log('reCAPTCHAトークン取得エラー:', error);
-    //                     });
-    //             } catch (e) {
-    //                 console.log('reCAPTCHA実行エラー:', e);
-    //             }
-    //         });
-    //     } else {
-    //         console.log('grecaptchaが正しく読み込まれていません');
-    //     }
-    // }
+    $('.card-update-scroll-link').on('click', function (e) {
+        e.preventDefault();
+
+        const targetId = $(this).data('target');
+        const $target = $('#' + targetId);
+
+        if ($target.length > 0) {
+            // フォームが存在する場合はスムーズスクロール
+            $('html, body').animate(
+                {
+                    scrollTop: $target.offset().top - 100
+                },
+                500,
+                function () {
+                    // スクロール完了後にフォームをハイライト
+                    $target.addClass('highlight-form');
+                    setTimeout(function () {
+                        $target.removeClass('highlight-form');
+                    }, 2000);
+                }
+            );
+        } else {
+            // フォームが存在しない場合は警告
+            alert('カード情報更新フォームが見つかりません。ページを更新してもう一度お試しください。');
+        }
+    });
 });

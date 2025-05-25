@@ -76,6 +76,23 @@
                         </td>
                     </tr>
                 </table>
+
+                <div class="card">
+                    <h2 class="title"><?php _e('サブスクリプション決済処理', 'edel-square-payment-pro'); ?></h2>
+                    <p><?php _e('この機能を使用すると、本日が決済日のすべてのアクティブなサブスクリプションに対して決済処理を実行します。', 'edel-square-payment-pro'); ?></p>
+
+                    <form method="post" action="<?php echo admin_url('admin-post.php'); ?>">
+                        <input type="hidden" name="action" value="edel_square_process_subscriptions_admin">
+                        <?php wp_nonce_field('edel_square_process_subscriptions'); ?>
+                        <p class="submit">
+                            <input type="submit" name="submit" class="button button-primary" value="<?php _e('決済処理を実行', 'edel-square-payment-pro'); ?>">
+                        </p>
+                    </form>
+
+                    <p class="description">
+                        <?php _e('注意: この処理は、サーバーのCronジョブによって毎日自動的に実行されます。手動で実行する必要があるのは、テストや緊急時のみです。', 'edel-square-payment-pro'); ?>
+                    </p>
+                </div>
             </div>
 
             <!-- メール設定タブ -->
@@ -134,6 +151,41 @@
                         <td>
                             <textarea name="customer_email_body" rows="8" class="large-text"><?php echo esc_textarea($settings['customer_email_body']); ?></textarea>
                             <p class="description">利用可能なプレースホルダー: {item_name}, {amount}, {payment_id}, {transaction_date}, {user_name}, {user_id}, {site_name}, {site_url}</p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>サブスクリプションキャンセル通知メール</h3>
+
+                <h4>管理者向けキャンセル通知</h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">件名</th>
+                        <td>
+                            <input type="text" name="subscription_cancel_admin_email_subject" class="regular-text" value="<?php echo esc_attr($settings['subscription_cancel_admin_email_subject']); ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">本文</th>
+                        <td>
+                            <textarea name="subscription_cancel_admin_email_body" rows="8" class="large-text"><?php echo esc_textarea($settings['subscription_cancel_admin_email_body']); ?></textarea>
+                            <p class="description">利用可能なプレースホルダー: {item_name}, {amount}, {customer_email}, {subscription_id}, {cancel_date}, {cancellation_type}, {user_name}, {site_name}, {site_url}</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <h4>購入者向けキャンセル通知</h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">件名</th>
+                        <td>
+                            <input type="text" name="subscription_cancel_customer_email_subject" class="regular-text" value="<?php echo esc_attr($settings['subscription_cancel_customer_email_subject']); ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">本文</th>
+                        <td>
+                            <textarea name="subscription_cancel_customer_email_body" rows="8" class="large-text"><?php echo esc_textarea($settings['subscription_cancel_customer_email_body']); ?></textarea>
+                            <p class="description">利用可能なプレースホルダー: {item_name}, {amount}, {subscription_id}, {cancel_date}, {cancellation_type}, {user_name}, {site_name}, {site_url}</p>
                         </td>
                     </tr>
                 </table>
@@ -269,23 +321,6 @@
             <input type="submit" name="edel_square_save_settings" class="button button-primary" value="設定を保存">
         </p>
     </form>
-
-    <div class="card">
-        <h2 class="title"><?php _e('サブスクリプション決済処理', 'edel-square-payment-pro'); ?></h2>
-        <p><?php _e('この機能を使用すると、本日が決済日のすべてのアクティブなサブスクリプションに対して決済処理を実行します。', 'edel-square-payment-pro'); ?></p>
-
-        <form method="post" action="<?php echo admin_url('admin-post.php'); ?>">
-            <input type="hidden" name="action" value="edel_square_process_subscriptions_admin">
-            <?php wp_nonce_field('edel_square_process_subscriptions'); ?>
-            <p class="submit">
-                <input type="submit" name="submit" class="button button-primary" value="<?php _e('決済処理を実行', 'edel-square-payment-pro'); ?>">
-            </p>
-        </form>
-
-        <p class="description">
-            <?php _e('注意: この処理は、サーバーのCronジョブによって毎日自動的に実行されます。手動で実行する必要があるのは、テストや緊急時のみです。', 'edel-square-payment-pro'); ?>
-        </p>
-    </div>
 </div>
 
 <script>

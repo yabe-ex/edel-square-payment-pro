@@ -9,6 +9,7 @@ class EdelSquarePaymentProAdmin {
         add_action('admin_post_edel_square_process_subscriptions_admin', array($this, 'handle_process_subscriptions_admin'));
         add_action('admin_init', array($this, 'handle_form_submissions'));
         add_action('admin_init', array($this, 'handle_admin_actions'));
+        add_action('admin_enqueue_scripts', array($this, 'admin_enqueue'));
     }
 
     public function register_admin_menu() {
@@ -16,7 +17,7 @@ class EdelSquarePaymentProAdmin {
         add_menu_page(
             'Square決済',
             'Square決済',
-            'manage_options',
+            'edel-square-payment-pro',
             'edel-square-payment-pro',
             array($this, 'render_payments_page'),
             'dashicons-cart',
@@ -133,6 +134,62 @@ class EdelSquarePaymentProAdmin {
         $this->handle_process_subscriptions();
         $this->handle_cancel_subscription();
         $this->handle_manual_payment();
+        $this->handle_cancel_subscription_from_list();
+    }
+
+    /**
+     * サブスクリプション一覧からのキャンセル処理
+     */
+    private function handle_cancel_subscription_from_list() {
+        if (!isset($_POST['cancel_subscription_from_list']) || !isset($_POST['cancel_list_nonce'])) {
+            return;
+        }
+
+        // 権限チェック
+        if (!current_user_can('manage_options')) {
+            wp_die('この操作を実行する権限がありません。');
+        }
+
+        $subscription_id = isset($_POST['subscription_id']) ? sanitize_text_field($_POST['subscription_id']) : '';
+
+        if (empty($subscription_id)) {
+            wp_die('サブスクリプションIDが指定されていません。');
+        }
+
+        // nonceチェック
+        if (!wp_verify_nonce($_POST['cancel_list_nonce'], 'cancel_subscription_list_' . $subscription_id)) {
+            wp_die('セキュリティチェックに失敗しました。');
+        }
+
+        // サブスクリプション情報を取得
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-db.php';
+        $subscription = EdelSquarePaymentProDB::get_subscription($subscription_id);
+
+        if (!$subscription) {
+            wp_die('サブスクリプションが見つかりません。');
+        }
+
+        // キャンセル処理
+        $now = current_time('mysql');
+        $update_data = array(
+            'status' => 'CANCELED',
+            'canceled_at' => $now,
+            'updated_at' => $now
+        );
+
+        $result = EdelSquarePaymentProDB::update_subscription($subscription_id, $update_data);
+
+        // リダイレクト
+        $redirect_url = add_query_arg(
+            array(
+                'page' => 'edel-square-payment-pro-subscriptions',
+                'canceled' => $result ? '1' : '0'
+            ),
+            admin_url('admin.php')
+        );
+
+        wp_safe_redirect($redirect_url);
+        exit;
     }
 
     /**
@@ -486,28 +543,29 @@ class EdelSquarePaymentProAdmin {
     }
 
     public function admin_enqueue($hook) {
+        if (strpos($hook, EDEL_SQUARE_PAYMENT_PRO_SLUG) === false) {
+            return;
+        }
         $version = (defined('EDEL_SQUARE_PAYMENT_PRO_DEVELOP') && true === EDEL_SQUARE_PAYMENT_PRO_DEVELOP) ? time() : EDEL_SQUARE_PAYMENT_PRO_VERSION;
 
         wp_register_script(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin', EDEL_SQUARE_PAYMENT_PRO_URL . '/js/admin.js', array('jquery'), $version, true);
         wp_register_style(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin', EDEL_SQUARE_PAYMENT_PRO_URL . '/css/admin.css', array(), $version);
 
-        if (strpos($hook, EDEL_SQUARE_PAYMENT_PRO_SLUG) !== false) {
-            wp_enqueue_style(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin');
-            wp_enqueue_script(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin');
+        wp_enqueue_style(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin');
+        wp_enqueue_script(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin');
 
-            $admin_params = array(
-                'ajaxUrl' => admin_url('admin-ajax.php'),
-                'nonce' => wp_create_nonce(EDEL_SQUARE_PAYMENT_PRO_PREFIX . 'admin_nonce'),
-                'i18n' => array(
-                    'confirmRefund' => '本当に返金処理を行いますか？この操作は元に戻せません。',
-                    'loading' => '処理中...',
-                    'error' => 'エラーが発生しました。',
-                    'success' => '処理が完了しました。',
-                ),
-            );
+        $admin_params = array(
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce(EDEL_SQUARE_PAYMENT_PRO_PREFIX . 'admin_nonce'),
+            'i18n' => array(
+                'confirmRefund' => '本当に返金処理を行いますか？この操作は元に戻せません。',
+                'loading' => '処理中...',
+                'error' => 'エラーが発生しました。',
+                'success' => '処理が完了しました。',
+            ),
+        );
 
-            wp_localize_script(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin', 'edelSquareAdminParams', $admin_params);
-        }
+        wp_localize_script(EDEL_SQUARE_PAYMENT_PRO_SLUG . '-admin', 'edelSquareAdminParams', $admin_params);
     }
 
     public function plugin_action_links($links) {

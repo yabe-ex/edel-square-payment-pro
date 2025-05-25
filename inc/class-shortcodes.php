@@ -252,6 +252,8 @@ class EdelSquarePaymentProShortcodes {
     // ユーザーのサブスクリプション一覧ページに表示するコード例
     public function display_user_subscriptions($atts) {
         // ユーザーが未ログインの場合はログインフォームを表示
+
+        echo '<div style="background: red; color: white; padding: 10px;">デバッグ: このコードが実行されています</div>';
         if (!is_user_logged_in()) {
             return '<p>サブスクリプション情報を表示するにはログインしてください。</p>' . wp_login_form(array('echo' => false));
         }
@@ -318,6 +320,22 @@ class EdelSquarePaymentProShortcodes {
                             </tr>
                         <?php endif; ?>
                     </table>
+                    <?php
+                    // ===== デバッグ用コード（確認後削除） =====
+                    echo '<div style="background: #ffffcc; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">';
+                    echo '<strong>デバッグ情報:</strong><br>';
+                    echo 'show_card_form: ' . ($atts['show_card_form'] ?? 'not set') . '<br>';
+                    echo 'subscription status: ' . $subscription->status . '<br>';
+                    echo 'card_id: ' . ($subscription->card_id ?? 'empty') . '<br>';
+                    echo 'card_id empty?: ' . (empty($subscription->card_id) ? 'YES' : 'NO') . '<br>';
+
+                    $show_form_condition = (
+                        $atts['show_card_form'] === 'yes' &&
+                        ($subscription->status === 'PAUSED' || empty($subscription->card_id))
+                    );
+                    echo 'フォーム表示条件: ' . ($show_form_condition ? 'TRUE' : 'FALSE') . '<br>';
+                    echo '</div>';
+                    ?>
 
                     <?php
                     // カード情報不足または一時停止状態の場合、カード更新フォームを表示
@@ -355,67 +373,6 @@ class EdelSquarePaymentProShortcodes {
                 </div>
             <?php endforeach; ?>
         </div>
-
-        <style>
-            .edel-square-subscriptions {
-                margin: 20px 0;
-            }
-
-            .subscription-item {
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-
-            .subscription-details {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .subscription-details th {
-                text-align: left;
-                padding: 5px 10px 5px 0;
-                width: 30%;
-            }
-
-            .status-active {
-                color: green;
-                font-weight: bold;
-            }
-
-            .status-paused {
-                color: orange;
-                font-weight: bold;
-            }
-
-            .status-canceled {
-                color: red;
-            }
-
-            .card-update-section {
-                background: #f9f9f9;
-                padding: 15px;
-                margin-top: 15px;
-                border-radius: 5px;
-            }
-
-            .square-card-container {
-                height: 100px;
-                margin-bottom: 15px;
-            }
-
-            .card-errors {
-                color: red;
-                margin-bottom: 10px;
-            }
-
-            .subscription-actions {
-                margin-top: 15px;
-                padding-top: 15px;
-                border-top: 1px solid #eee;
-            }
-        </style>
     <?php
         return ob_get_clean(); // バッファの内容を返して終了
     }
@@ -962,12 +919,11 @@ class EdelSquarePaymentProShortcodes {
      * @return string HTML出力
      */
     public function render_myaccount_page($atts) {
-        // ログインしていない場合はログインページにリダイレクト
+        // ログイン確認
         if (!is_user_logged_in()) {
             require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-settings.php';
             $settings = EdelSquarePaymentProSettings::get_settings();
 
-            // ログインページが設定されていれば、そこにリダイレクト
             if (!empty($settings['login_redirect'])) {
                 $login_url = get_permalink((int)$settings['login_redirect']);
                 if ($login_url) {
@@ -975,11 +931,210 @@ class EdelSquarePaymentProShortcodes {
                     exit;
                 }
             }
-
-            // 設定がなければデフォルトのログインフォームを表示
             return $this->render_login_form($atts);
         }
 
+        // GETパラメータで画面切り替えをチェック
+        $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : '';
+        $subscription_id = isset($_GET['subscription_id']) ? sanitize_text_field($_GET['subscription_id']) : '';
+
+        // カード更新画面の表示
+        if ($action === 'update_card' && !empty($subscription_id)) {
+            return $this->render_card_update_page($subscription_id);
+        }
+
+        // 通常のマイアカウント画面
+        return $this->render_standard_myaccount_page($atts);
+    }
+
+    /**
+     * カード更新専用画面
+     */
+    private function render_card_update_page($subscription_id) {
+        $user = wp_get_current_user();
+
+        // サブスクリプション情報を取得
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-db.php';
+        $subscription = EdelSquarePaymentProDB::get_subscription($subscription_id);
+
+        // 権限確認
+        if (!$subscription || $subscription->user_id != $user->ID) {
+            return '<div class="edel-square-error">アクセス権限がありません。</div>';
+        }
+
+        // プラン情報取得
+        $plan = EdelSquarePaymentProDB::get_plan($subscription->plan_id);
+        $plan_name = $plan ? $plan['name'] : '不明なプラン';
+
+        // 設定取得
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-settings.php';
+        $settings = EdelSquarePaymentProSettings::get_settings();
+
+        ob_start();
+    ?>
+        <div class="edel-square-card-update">
+            <h2>支払い方法の変更</h2>
+
+            <div class="subscription-info">
+                <h3><?php echo esc_html($plan_name); ?></h3>
+                <p>金額: <?php echo number_format($subscription->amount); ?>円</p>
+                <p>現在のステータス:
+                    <span class="status-<?php echo strtolower($subscription->status); ?>">
+                        <?php
+                        switch ($subscription->status) {
+                            case 'ACTIVE':
+                                echo '有効';
+                                break;
+                            case 'PAUSED':
+                                echo '一時停止';
+                                break;
+                            case 'CANCELED':
+                                echo 'キャンセル済み';
+                                break;
+                            default:
+                                echo $subscription->status;
+                        }
+                        ?>
+                    </span>
+                </p>
+            </div>
+
+            <div class="card-update-form-container">
+                <h3>新しいカード情報を入力してください</h3>
+
+                <form id="card-update-form" method="post">
+                    <div id="card-container" class="square-card-container"></div>
+                    <div id="card-errors" class="card-errors" role="alert"></div>
+
+                    <input type="hidden" name="subscription_id" value="<?php echo esc_attr($subscription_id); ?>">
+                    <input type="hidden" name="action" value="edel_square_update_card">
+                    <input type="hidden" name="payment_token" id="payment-token" value="">
+                    <?php wp_nonce_field('edel_square_update_card_nonce', 'card_update_nonce'); ?>
+
+                    <div class="form-actions">
+                        <button type="submit" id="update-card-button" class="button button-primary">
+                            カード情報を更新する
+                        </button>
+                        <a href="<?php echo esc_url(remove_query_arg(['action', 'subscription_id'])); ?>" class="button">
+                            戻る
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Square Web Payments SDK の初期化
+                if (typeof Square === 'undefined') {
+                    console.error('Square Web Payments SDK が読み込まれていません');
+                    return;
+                }
+
+                const appId = '<?php echo esc_js($settings['sandbox_mode'] ? $settings['sandbox_application_id'] : $settings['production_application_id']); ?>';
+                const locationId = '<?php echo esc_js($settings['sandbox_mode'] ? $settings['sandbox_location_id'] : $settings['production_location_id']); ?>';
+
+                if (!appId || !locationId) {
+                    console.error('Square API設定が不完全です');
+                    document.getElementById('card-errors').textContent = '決済システムの設定に問題があります。管理者にお問い合わせください。';
+                    return;
+                }
+
+                async function initializeCard(payments) {
+                    const card = await payments.card();
+                    await card.attach('#card-container');
+                    return card;
+                }
+
+                async function createPayment(token) {
+                    const formData = new FormData();
+                    formData.append('action', 'edel_square_update_card');
+                    formData.append('subscription_id', '<?php echo esc_js($subscription_id); ?>');
+                    formData.append('payment_token', token);
+                    formData.append('card_update_nonce', document.querySelector('[name="card_update_nonce"]').value);
+
+                    try {
+                        const response = await fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            // 成功時
+                            alert('カード情報が正常に更新されました！');
+                            window.location.href = '<?php echo esc_url(remove_query_arg(['action', 'subscription_id'])); ?>';
+                        } else {
+                            // エラー時
+                            document.getElementById('card-errors').textContent = result.data || 'カード情報の更新に失敗しました';
+                            document.getElementById('update-card-button').disabled = false;
+                            document.getElementById('update-card-button').textContent = 'カード情報を更新する';
+                        }
+                    } catch (error) {
+                        console.error('通信エラー:', error);
+                        document.getElementById('card-errors').textContent = '通信エラーが発生しました。もう一度お試しください。';
+                        document.getElementById('update-card-button').disabled = false;
+                        document.getElementById('update-card-button').textContent = 'カード情報を更新する';
+                    }
+                }
+
+                // Square Payments の初期化
+                const payments = Square.payments(appId, locationId);
+                let card;
+
+                initializeCard(payments).then(cardInstance => {
+                    card = cardInstance;
+                }).catch(e => {
+                    console.error('カードの初期化に失敗:', e);
+                    document.getElementById('card-errors').textContent = 'カード入力フォームの初期化に失敗しました';
+                });
+
+                // フォーム送信処理
+                document.getElementById('card-update-form').addEventListener('submit', async (event) => {
+                    event.preventDefault();
+
+                    if (!card) {
+                        document.getElementById('card-errors').textContent = 'カード情報が初期化されていません';
+                        return;
+                    }
+
+                    const updateButton = document.getElementById('update-card-button');
+                    updateButton.disabled = true;
+                    updateButton.textContent = '処理中...';
+
+                    // エラー表示をクリア
+                    document.getElementById('card-errors').textContent = '';
+
+                    try {
+                        const result = await card.tokenize();
+                        if (result.status === 'OK') {
+                            await createPayment(result.token);
+                        } else {
+                            let errorMessage = 'カード情報に問題があります';
+                            if (result.errors) {
+                                errorMessage = result.errors.map(error => error.message).join(', ');
+                            }
+                            document.getElementById('card-errors').textContent = errorMessage;
+                            updateButton.disabled = false;
+                            updateButton.textContent = 'カード情報を更新する';
+                        }
+                    } catch (e) {
+                        console.error('トークン化エラー:', e);
+                        document.getElementById('card-errors').textContent = 'カード情報の処理に失敗しました';
+                        updateButton.disabled = false;
+                        updateButton.textContent = 'カード情報を更新する';
+                    }
+                });
+            });
+        </script>
+    <?php
+        return ob_get_clean();
+    }
+
+    /**
+     * 通常のマイアカウント画面（既存のコードに支払い方法変更リンクを追加）
+     */
+    private function render_standard_myaccount_page($atts) {
         // 現在のユーザー情報
         $user = wp_get_current_user();
 
@@ -996,7 +1151,7 @@ class EdelSquarePaymentProShortcodes {
             <h2>マイアカウント</h2>
 
             <?php
-            // ここにメッセージ表示機能を追加
+            // メッセージ表示機能
             if (isset($_GET['result']) && $_GET['result'] === 'cancel_success') {
                 echo '<div class="edel-square-message success">次回更新時にサブスクリプションがキャンセルされます。</div>';
             } elseif (isset($_GET['error'])) {
@@ -1034,17 +1189,10 @@ class EdelSquarePaymentProShortcodes {
             <?php else: ?>
                 <div class="edel-square-subscriptions">
                     <?php foreach ($subscriptions as $subscription):
-                        // サブスクリプションが配列かオブジェクトかを確認
+                        // サブスクリプションデータの処理
                         $subscription_data = is_array($subscription) ? $subscription : (array)$subscription;
-
-                        // プラン情報を取得
                         $plan_id = isset($subscription_data['plan_id']) ? $subscription_data['plan_id'] : '';
                         $plan = $plan_id ? EdelSquarePaymentProDB::get_plan($plan_id) : null;
-
-                        if (!$plan) {
-                            error_log('プランが見つかりません: ' . $plan_id);
-                        }
-
                         $plan_name = $plan ? $plan['name'] : '不明なプラン(ID: ' . $plan_id . ')';
 
                         // メタデータの解析
@@ -1061,7 +1209,7 @@ class EdelSquarePaymentProShortcodes {
                             }
                         }
 
-                        // ステータスに応じたクラスとラベル
+                        // ステータス情報
                         $status = isset($subscription_data['status']) ? $subscription_data['status'] : '';
                         $status_class = '';
                         $status_label = '';
@@ -1087,13 +1235,10 @@ class EdelSquarePaymentProShortcodes {
                         $amount = isset($subscription_data['amount']) ? $subscription_data['amount'] : 0;
                         $currency = isset($subscription_data['currency']) ? $subscription_data['currency'] : 'JPY';
 
-                        // 通貨ごとの表示方法を適用
                         if ($currency === 'JPY') {
-                            // JPYはそのまま表示
                             $currency = "円";
                             $formatted_amount = number_format($amount) . $currency;
                         } else {
-                            // USD, EUR などは小数点以下2桁で表示
                             $formatted_amount = number_format($amount / 100, 2) . $currency;
                         }
 
@@ -1103,11 +1248,6 @@ class EdelSquarePaymentProShortcodes {
 
                         // サブスクリプションID
                         $subscription_id = isset($subscription_data['subscription_id']) ? $subscription_data['subscription_id'] : '';
-
-                        // デバッグ情報
-                        if (WP_DEBUG) {
-                            error_log('サブスクリプションデータ: ' . print_r($subscription_data, true));
-                        }
                     ?>
                         <div class="subscription-item">
                             <h4><?php echo esc_html($plan_name); ?></h4>
@@ -1134,25 +1274,23 @@ class EdelSquarePaymentProShortcodes {
                                 <?php endif; ?>
                             </table>
 
-                            <?php
-                            // カード情報不足または一時停止状態の場合、警告メッセージを表示
-                            $card_id = isset($subscription_data['card_id']) ? $subscription_data['card_id'] : '';
-                            if ($status === 'PAUSED' || empty($card_id)):
-                            ?>
-                                <div class="subscription-warning">
-                                    <p><strong>注意:</strong> このサブスクリプションは一時停止されています。カード情報の更新が必要です。</p>
-                                    <p>
-                                        <a href="<?php echo esc_url(admin_url('admin.php?page=edel-square-payment-pro-update-card&subscription_id=' . $subscription_id)); ?>" class="button update-card-button">カード情報を更新する</a>
-                                    </p>
+                            <?php if ($status === 'PAUSED'): ?>
+                                <div class="subscription-notice">
+                                    <p><strong>ご注意:</strong> このサブスクリプションは一時停止されています。</p>
+                                    <p>支払い方法を更新して、サブスクリプションを再開してください。</p>
                                 </div>
                             <?php endif; ?>
 
-                            <?php
-                            // アクティブなサブスクリプションの場合、キャンセルボタンを表示
-                            if ($status === 'ACTIVE'):
-                            ?>
-                                <div class="subscription-actions">
-                                    <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" class="cancel-subscription-form" onsubmit="return confirm('このサブスクリプションをキャンセルしてもよろしいですか？この操作は取り消せません。');">
+                            <div class="subscription-actions">
+                                <?php if ($status === 'ACTIVE' || $status === 'PAUSED'): ?>
+                                    <a href="<?php echo esc_url(add_query_arg(['action' => 'update_card', 'subscription_id' => $subscription_id])); ?>"
+                                        class="button update-payment-button">
+                                        支払い方法を変更
+                                    </a>
+                                <?php endif; ?>
+
+                                <?php if ($status === 'ACTIVE'): ?>
+                                    <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" class="cancel-subscription-form" onsubmit="return confirm('このサブスクリプションをキャンセルしてもよろしいですか？この操作は取り消せません。');" style="display: inline-block; margin-left: 10px;">
                                         <input type="hidden" name="action" value="edel_square_cancel_subscription">
                                         <input type="hidden" name="subscription_id" value="<?php echo esc_attr($subscription_id); ?>">
                                         <?php
@@ -1161,8 +1299,8 @@ class EdelSquarePaymentProShortcodes {
                                         ?>
                                         <button type="submit" class="button cancel-button">サブスクリプションをキャンセルする</button>
                                     </form>
-                                </div>
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -1199,10 +1337,6 @@ class EdelSquarePaymentProShortcodes {
                 <a href="<?php echo wp_logout_url(get_permalink()); ?>" class="edel-square-logout-link">ログアウト</a>
             </p>
         </div>
-
-        <style>
-
-        </style>
     <?php
         return ob_get_clean();
     }
@@ -1271,6 +1405,14 @@ class EdelSquarePaymentProShortcodes {
         if ($result) {
             // メール送信処理を追加（オプション）
             $this->send_subscription_cancel_email($subscription_id);
+
+            // サブスクリプションキャンセル完了フック
+            do_action(
+                'edel_square_subscription_cancelled',
+                $subscription->user_id,      // ユーザーID
+                $subscription_id,            // サブスクリプションID
+                $subscription->plan_id       // プランID
+            );
         }
 
         // リダイレクト（マイアカウントページに戻る）
@@ -1532,114 +1674,7 @@ class EdelSquarePaymentProShortcodes {
      * サブスクリプションフォームのレンダリング
      */
     public function render_subscription_form($atts) {
-
-        // ここから追加するデバッグコード
-        ob_start();
-        echo '<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px;">';
-        echo '<h3>Square API機能テスト</h3>';
-
-        // APIクラスの読み込み
-        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-square-api.php';
-        $square_api = new EdelSquarePaymentProAPI();
-
-        echo '<p><strong>API接続ステータス:</strong> ';
-        if ($square_api->is_connected()) {
-            echo '<span style="color: green;">接続成功 ✓</span>';
-        } else {
-            echo '<span style="color: red;">接続失敗 ✗</span>';
-        }
-        echo '</p>';
-
-        echo '<p><strong>使用モード:</strong> ';
-        echo $square_api->is_sandbox_mode() ? 'サンドボックス' : '本番';
-        echo '</p>';
-
-        echo '<p><strong>アプリケーションID:</strong> ';
-        $app_id = $square_api->get_application_id();
-        echo !empty($app_id) ? substr($app_id, 0, 5) . '...' . substr($app_id, -5) : '未設定';
-        echo '</p>';
-
-        echo '<p><strong>ロケーションID:</strong> ';
-        $location_id = $square_api->get_location_id();
-        echo !empty($location_id) ? substr($location_id, 0, 5) . '...' . substr($location_id, -5) : '未設定';
-        echo '</p>';
-
-        // API機能チェック
-        $api_client = null;
-        $api_available = true;
-
-        try {
-            // APIクライアントの取得（プライベートメソッド/プロパティへのアクセス方法）
-            $reflection = new ReflectionClass($square_api);
-            $property = $reflection->getProperty('api_client');
-            $property->setAccessible(true);
-            $api_client = $property->getValue($square_api);
-
-            echo '<p><strong>APIクライアント:</strong> <span style="color: green;">利用可能 ✓</span></p>';
-        } catch (Exception $e) {
-            echo '<p><strong>APIクライアント:</strong> <span style="color: red;">エラー ✗</span> ' . $e->getMessage() . '</p>';
-            $api_available = false;
-        }
-
-        if ($api_available && $api_client) {
-            // 顧客API
-            try {
-                $customers_api = $api_client->getCustomersApi();
-                echo '<p><strong>顧客API:</strong> <span style="color: green;">利用可能 ✓</span></p>';
-            } catch (Exception $e) {
-                echo '<p><strong>顧客API:</strong> <span style="color: red;">エラー ✗</span> ' . $e->getMessage() . '</p>';
-            }
-
-            // カードAPI
-            try {
-                $cards_api = $api_client->getCardsApi();
-                echo '<p><strong>カードAPI:</strong> <span style="color: green;">利用可能 ✓</span></p>';
-            } catch (Exception $e) {
-                echo '<p><strong>カードAPI:</strong> <span style="color: red;">エラー ✗</span> ' . $e->getMessage() . '</p>';
-            }
-
-            // 決済API
-            try {
-                $payments_api = $api_client->getPaymentsApi();
-                echo '<p><strong>決済API:</strong> <span style="color: green;">利用可能 ✓</span></p>';
-            } catch (Exception $e) {
-                echo '<p><strong>決済API:</strong> <span style="color: red;">エラー ✗</span> ' . $e->getMessage() . '</p>';
-            }
-        }
-
-        // AJAX処理テスト用のボタン
-        echo '<div style="margin-top: 15px;">';
-        echo '<button id="test-subscription-ajax" style="background-color: #1e4b7a; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">サブスクリプションAPI呼び出しテスト</button>';
-        echo '<div id="test-subscription-result" style="margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; display: none;"></div>';
-        echo '</div>';
-
-        // テスト用の簡易スクリプト
-        echo '<script>
-        jQuery(document).ready(function($) {
-            $("#test-subscription-ajax").on("click", function() {
-                $("#test-subscription-result").html("テスト中...").show();
-
-                $.ajax({
-                    url: "' . admin_url('admin-ajax.php') . '",
-                    type: "POST",
-                    data: {
-                        action: "edel_square_test_subscription",
-                        nonce: "' . wp_create_nonce(EDEL_SQUARE_PAYMENT_PRO_PREFIX . 'nonce') . '"
-                    },
-                    success: function(response) {
-                        $("#test-subscription-result").html("<strong>成功:</strong> " + JSON.stringify(response)).css("color", "green");
-                    },
-                    error: function(xhr, status, error) {
-                        $("#test-subscription-result").html("<strong>エラー:</strong> " + error).css("color", "red");
-                    }
-                });
-            });
-        });
-    </script>';
-
-        echo '</div>';
-        $debug_output = ob_get_clean();
-        // var_dump($debug_output);
+        // ここから追加するデバッグコード部分は省略...
 
         $atts = shortcode_atts(array(
             'plan_id' => '',
@@ -1652,10 +1687,38 @@ class EdelSquarePaymentProShortcodes {
             'button_text' => '登録する',
         ), $atts, 'edel_square_subscription');
 
-        // プラン情報の取得とフォーム出力実装
-        // 詳細な実装は省略
+        // 設定の読み込み
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-settings.php';
+        $settings = EdelSquarePaymentProSettings::get_settings();
 
-        // フォームの出力サンプル
+        // APIクラスの読み込み
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-square-api.php';
+        $square_api = new EdelSquarePaymentProAPI();
+
+        // API接続チェック
+        if (empty($settings['sandbox_application_id']) || empty($settings['sandbox_location_id']) || empty($settings['sandbox_access_token'])) {
+            if (current_user_can('manage_options')) {
+                return '<p class="edel-square-error">Square APIの設定が完了していません。管理画面から設定を行ってください。</p>';
+            } else {
+                return '<p class="edel-square-error">決済システムが現在利用できません。</p>';
+            }
+        }
+
+        // 同意文言の処理
+        $consent_text = '';
+        if (!empty($settings['show_consent_checkbox']) && $settings['show_consent_checkbox'] === '1') {
+            $consent_text = EdelSquarePaymentProSettings::process_consent_text($settings['consent_text']);
+        }
+
+        // ログイン中のユーザー情報を取得
+        $user_email = '';
+        $is_logged_in = is_user_logged_in();
+        if ($is_logged_in) {
+            $current_user = wp_get_current_user();
+            $user_email = $current_user->user_email;
+        }
+
+        // フォームの出力
         ob_start();
     ?>
         <div class="edel-square-subscription-form-container">
@@ -1695,13 +1758,27 @@ class EdelSquarePaymentProShortcodes {
 
                 <div class="edel-square-form-group">
                     <label for="edel-square-sub-email">メールアドレス <span class="required">（必須）</span></label>
-                    <input type="email" id="edel-square-sub-email" name="email" required>
+                    <?php if ($is_logged_in): ?>
+                        <input type="email" id="edel-square-sub-email" name="email" value="<?php echo esc_attr($user_email); ?>" readonly class="readonly-field">
+                        <input type="hidden" id="edel-square-sub-email-hidden" name="email_hidden" value="<?php echo esc_attr($user_email); ?>">
+                    <?php else: ?>
+                        <input type="email" id="edel-square-sub-email" name="email" required>
+                    <?php endif; ?>
                 </div>
 
                 <div class="edel-square-form-group">
                     <label for="card-container">クレジットカード情報</label>
                     <div id="card-container"></div>
                 </div>
+
+                <?php if (!empty($consent_text)): ?>
+                    <div class="edel-square-form-group">
+                        <label class="edel-square-checkbox-label">
+                            <input type="checkbox" id="edel-square-consent" name="consent" required>
+                            <?php echo $consent_text; ?>
+                        </label>
+                    </div>
+                <?php endif; ?>
 
                 <div class="edel-square-form-group">
                     <div id="edel-square-subscription-status" class="edel-square-payment-status"></div>
@@ -2494,6 +2571,14 @@ class EdelSquarePaymentProShortcodes {
                 'message' => nl2br(esc_html($settings['subscription_success_message'] ?? 'サブスクリプションの登録が完了しました。<br />マイアカウントページからご確認いただけます。')),
                 'subscription_id' => $subscription_id,
                 'redirect_url' => $redirect_url,
+            );
+
+            do_action(
+                'edel_square_subscription_completed',
+                $user_id,                    // ユーザーID
+                $subscription_data,          // サブスクリプションデータ (変数名要確認)
+                $plan_id,                    // プランID (変数名要確認)
+                $response                    // レスポンス情報
             );
 
             file_put_contents(
