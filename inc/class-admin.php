@@ -13,6 +13,8 @@ class EdelSquarePaymentProAdmin {
     }
 
     public function register_admin_menu() {
+        require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-license-manager.php';
+
         // メインメニュー
         add_menu_page(
             'Square決済',
@@ -24,6 +26,7 @@ class EdelSquarePaymentProAdmin {
             30
         );
 
+
         // 決済一覧
         add_submenu_page(
             'edel-square-payment-pro',
@@ -33,65 +36,77 @@ class EdelSquarePaymentProAdmin {
             'edel-square-payment-pro-list',
             array($this, 'render_payments_page')
         );
+        if (EdelSquarePaymentProLicense::is_license_valid()) {
+            // サブスクリプション一覧
+            add_submenu_page(
+                'edel-square-payment-pro',
+                'サブスク決済一覧',
+                'サブスク決済一覧',
+                'manage_options',
+                'edel-square-payment-pro-subscriptions',
+                array($this, 'render_subscriptions_page')
+            );
 
-        // サブスクリプション一覧
+            // サブスクリプション編集ページ（非表示）
+            add_submenu_page(
+                null, // 親メニューにnullを指定すると非表示になる
+                'サブスクリプション編集',
+                'サブスクリプション編集',
+                'manage_options',
+                'edel-square-payment-pro-edit-subscription',
+                array($this, 'render_edit_subscription_page')
+            );
+
+            // サブスクリプションプラン一覧
+            add_submenu_page(
+                'edel-square-payment-pro',
+                'サブスクプラン一覧',
+                'サブスクプラン一覧',
+                'manage_options',
+                'edel-square-payment-pro-plans',
+                array($this, 'render_plans_page')
+            );
+
+            // プラン編集ページ（非表示）
+            add_submenu_page(
+                null,
+                'プラン編集',
+                'プラン編集',
+                'manage_options',
+                'edel-square-payment-pro-edit-plan',
+                array($this, 'render_edit_plan_page')
+            );
+
+            // プラン追加ページ（非表示）
+            add_submenu_page(
+                null,
+                'プラン追加',
+                'プラン追加',
+                'manage_options',
+                'edel-square-payment-pro-add-plan',
+                array($this, 'render_add_plan_page')
+            );
+
+            // 設定ページ
+            add_submenu_page(
+                'edel-square-payment-pro',
+                '設定',
+                '設定',
+                'manage_options',
+                'edel-square-payment-pro-settings',
+                array($this, 'show_settings_page')
+            );
+        }
+
+        $license = new EdelSquarePaymentProLicense();
         add_submenu_page(
             'edel-square-payment-pro',
-            'サブスク決済一覧',
-            'サブスク決済一覧',
+            'ライセンス管理',
+            'ライセンス管理',
             'manage_options',
-            'edel-square-payment-pro-subscriptions',
-            array($this, 'render_subscriptions_page')
-        );
-
-        // サブスクリプション編集ページ（非表示）
-        add_submenu_page(
-            null, // 親メニューにnullを指定すると非表示になる
-            'サブスクリプション編集',
-            'サブスクリプション編集',
-            'manage_options',
-            'edel-square-payment-pro-edit-subscription',
-            array($this, 'render_edit_subscription_page')
-        );
-
-        // サブスクリプションプラン一覧
-        add_submenu_page(
-            'edel-square-payment-pro',
-            'サブスクプラン一覧',
-            'サブスクプラン一覧',
-            'manage_options',
-            'edel-square-payment-pro-plans',
-            array($this, 'render_plans_page')
-        );
-
-        // プラン編集ページ（非表示）
-        add_submenu_page(
-            null,
-            'プラン編集',
-            'プラン編集',
-            'manage_options',
-            'edel-square-payment-pro-edit-plan',
-            array($this, 'render_edit_plan_page')
-        );
-
-        // プラン追加ページ（非表示）
-        add_submenu_page(
-            null,
-            'プラン追加',
-            'プラン追加',
-            'manage_options',
-            'edel-square-payment-pro-add-plan',
-            array($this, 'render_add_plan_page')
-        );
-
-        // 設定ページ
-        add_submenu_page(
-            'edel-square-payment-pro',
-            '設定',
-            '設定',
-            'manage_options',
-            'edel-square-payment-pro-settings',
-            array($this, 'show_settings_page')
+            'edel-square-payment-license',
+            array($license, 'license_page'),
+            99
         );
     }
 
@@ -416,7 +431,7 @@ class EdelSquarePaymentProAdmin {
 
         require_once EDEL_SQUARE_PAYMENT_PRO_PATH . '/inc/class-settings.php';
         $default_settings = EdelSquarePaymentProSettings::get_default_settings();
-        update_option(EDEL_SQUARE_PAYMENT_PRO_PREFIX . 'settings', $default_settings);
+        // update_option(EDEL_SQUARE_PAYMENT_PRO_PREFIX . 'settings', $default_settings);
     }
 
     public function render_settings_page() {

@@ -166,11 +166,28 @@ jQuery(document).ready(function ($) {
                 dataType: 'json',
                 success: function (response) {
                     if (response.success) {
+                        console.log('買い切り決済成功');
+
                         // 決済フォームを非表示
                         $('.edel-square-payment-form').hide();
 
+                        // メッセージのHTMLを構築（サブスクリプション決済と同じ方式）
+                        let successHtml = '';
+
+                        // メッセージ本文（responseの構造に合わせて修正）
+                        if (response.data.message) {
+                            successHtml += response.data.message;
+                        } else {
+                            successHtml += 'ご購入ありがとうございます。決済が完了しました。';
+                        }
+
+                        // リダイレクト情報を追加
+                        if (response.data.redirect_url) {
+                            successHtml += '<p class="redirect-info">3秒後にマイアカウントページへ移動します...</p>';
+                        }
+
                         // 成功メッセージを表示
-                        $('#edel-square-success-message').html(response.data.message).show();
+                        $('#edel-square-success-message').html(successHtml).show();
 
                         // リダイレクト先がある場合
                         if (response.data.redirect_url) {
@@ -207,11 +224,28 @@ jQuery(document).ready(function ($) {
                 dataType: 'json',
                 success: function (response) {
                     if (response.success) {
+                        console.log('買い切り決済成功');
+
                         // 決済フォームを非表示
                         $('.edel-square-payment-form').hide();
 
+                        // メッセージのHTMLを構築（サブスクリプション決済と同じ方式）
+                        let successHtml = '';
+
+                        // メッセージ本文
+                        if (response.data.message) {
+                            successHtml += response.data.message;
+                        } else {
+                            successHtml += 'ご購入ありがとうございます。決済が完了しました。';
+                        }
+
+                        // リダイレクト情報を追加
+                        if (response.data.redirect_url) {
+                            successHtml += '<p class="redirect-info">3秒後にマイアカウントページへ移動します...</p>';
+                        }
+
                         // 成功メッセージを表示
-                        $('#edel-square-success-message').html(response.data.message).show();
+                        $('#edel-square-success-message').html(successHtml).show();
 
                         // リダイレクト先がある場合
                         if (response.data.redirect_url) {
@@ -435,7 +469,7 @@ jQuery(document).ready(function ($) {
                         $('.edel-square-subscription-form').hide();
 
                         // メッセージのHTMLを構築
-                        let successHtml = '<div class="edel-square-success-message">';
+                        let successHtml = '';
 
                         // メッセージ本文（responseの構造に合わせて修正）
                         if (response.message) {
@@ -448,8 +482,6 @@ jQuery(document).ready(function ($) {
                         if (response.redirect_url) {
                             successHtml += '<p class="redirect-info">3秒後にマイアカウントページへ移動します...</p>';
                         }
-
-                        successHtml += '</div>';
 
                         // 成功メッセージを表示
                         $('#edel-square-subscription-success').html(successHtml).show();
@@ -722,5 +754,435 @@ jQuery(document).ready(function ($) {
             // フォームが存在しない場合は警告
             alert('カード情報更新フォームが見つかりません。ページを更新してもう一度お試しください。');
         }
+    });
+
+    const $myAccount = $('#edel-square-myaccount');
+    const $tabs = $myAccount.find('.edel-square-tab');
+    const $tabContents = $myAccount.find('.edel-square-tab-content');
+
+    // タブクリック処理
+    $tabs.on('click', function (e) {
+        e.preventDefault();
+
+        const $clickedTab = $(this);
+        const targetTab = $clickedTab.data('tab');
+        const $targetContent = $('#tab-' + targetTab);
+
+        // 既にアクティブなタブの場合は何もしない
+        if ($clickedTab.hasClass('edel-square-tab-active')) {
+            return;
+        }
+
+        // アニメーション中は操作を無効化
+        if ($clickedTab.data('switching')) {
+            return;
+        }
+
+        $clickedTab.data('switching', true);
+
+        // 現在のアクティブコンテンツをフェードアウト
+        const $currentContent = $tabContents.filter('.edel-square-tab-content-active');
+
+        $currentContent.fadeOut(200, function () {
+            // すべてのタブとコンテンツからアクティブクラスを除去
+            $tabs.removeClass('edel-square-tab-active');
+            $tabContents.removeClass('edel-square-tab-content-active');
+
+            // 新しいタブとコンテンツをアクティブに
+            $clickedTab.addClass('edel-square-tab-active');
+            $targetContent.addClass('edel-square-tab-content-active');
+
+            // 新しいコンテンツをフェードイン
+            $targetContent.fadeIn(300, function () {
+                $clickedTab.removeData('switching');
+
+                // カスタムイベントを発火（他の機能で利用可能）
+                $myAccount.trigger('tabChanged', [targetTab]);
+            });
+        });
+
+        // URLハッシュを更新（ブラウザの戻るボタン対応）
+        if (history.pushState) {
+            const newUrl = window.location.pathname + window.location.search + '#' + targetTab;
+            history.pushState({ tab: targetTab }, '', newUrl);
+        }
+    });
+
+    // ブラウザの戻る/進むボタン対応
+    $(window).on('popstate', function (e) {
+        const hash = window.location.hash.replace('#', '');
+        if (hash && $myAccount.find('.edel-square-tab[data-tab="' + hash + '"]').length > 0) {
+            $myAccount.find('.edel-square-tab[data-tab="' + hash + '"]').click();
+        }
+    });
+
+    // 初期化処理
+    function initializeTabs() {
+        // URLハッシュがある場合は該当タブをアクティブに
+        const hash = window.location.hash.replace('#', '');
+        let $activeTab;
+
+        if (hash && $myAccount.find('.edel-square-tab[data-tab="' + hash + '"]').length > 0) {
+            $activeTab = $myAccount.find('.edel-square-tab[data-tab="' + hash + '"]');
+        } else {
+            // ハッシュがない場合は既にアクティブなタブまたは最初のタブを使用
+            $activeTab = $tabs.filter('.edel-square-tab-active');
+            if ($activeTab.length === 0) {
+                $activeTab = $tabs.first();
+            }
+        }
+
+        // アクティブタブとコンテンツを設定
+        const targetTab = $activeTab.data('tab');
+        $tabs.removeClass('edel-square-tab-active');
+        $tabContents.removeClass('edel-square-tab-content-active');
+        $activeTab.addClass('edel-square-tab-active');
+        $('#tab-' + targetTab)
+            .addClass('edel-square-tab-content-active')
+            .show();
+    }
+
+    // キーボードナビゲーション（オプション）
+    $tabs.on('keydown', function (e) {
+        const $current = $(this);
+        let $next;
+
+        switch (e.keyCode) {
+            case 37: // 左矢印
+                $next = $current.prev('.edel-square-tab');
+                if ($next.length === 0) {
+                    $next = $tabs.last();
+                }
+                break;
+            case 39: // 右矢印
+                $next = $current.next('.edel-square-tab');
+                if ($next.length === 0) {
+                    $next = $tabs.first();
+                }
+                break;
+            case 13: // Enter
+            case 32: // Space
+                e.preventDefault();
+                $current.click();
+                return;
+        }
+
+        if ($next && $next.length > 0) {
+            e.preventDefault();
+            $next.focus().click();
+        }
+    });
+
+    // タブにtabindex属性を追加（キーボードナビゲーション対応）
+    $tabs.attr('tabindex', '0');
+
+    // 初期化実行
+    initializeTabs();
+
+    // デバッグ用（開発時のみ使用）
+    $myAccount.on('tabChanged', function (e, tabName) {
+        console.log('Tab changed to:', tabName);
+    });
+
+    // カード更新処理の初期化（表示時初期化方式）
+    function initializeCardUpdate() {
+        console.log('カード更新処理を初期化中...');
+
+        // Square Web Payments SDKの確認
+        if (typeof window.Square === 'undefined') {
+            console.error('Square Web Payments SDKが読み込まれていません');
+            return;
+        }
+
+        // フォーム表示ボタンのクリックイベント
+        $(document).on('click', '.show-card-form-button', function () {
+            const button = $(this);
+            const subscriptionId = button.data('subscription-id');
+            const formContainer = $('#card-update-form-container-' + subscriptionId);
+
+            console.log('カード更新フォームを表示:', subscriptionId);
+
+            // ボタンを非表示にしてフォームを表示
+            button.hide();
+            formContainer.show();
+
+            // エラーメッセージをクリア
+            clearCardError(subscriptionId);
+
+            // フォーム表示後にSquare Card Formを初期化
+            setTimeout(function () {
+                initializeSquareCardForm(subscriptionId);
+            }, 100);
+        });
+
+        // キャンセルボタンのクリックイベント
+        $(document).on('click', '.cancel-card-form-button', function () {
+            const button = $(this);
+            const subscriptionId = button.data('subscription-id');
+            const formContainer = $('#card-update-form-container-' + subscriptionId);
+            const showButton = $('.show-card-form-button[data-subscription-id="' + subscriptionId + '"]');
+
+            console.log('カード更新をキャンセル:', subscriptionId);
+
+            // フォームを非表示にしてボタンを表示
+            formContainer.hide();
+            showButton.show();
+
+            // エラーメッセージをクリア
+            clearCardError(subscriptionId);
+        });
+    }
+
+    // Square カードフォームの初期化（表示時のみ）
+    function initializeSquareCardForm(subscriptionId) {
+        console.log('Square カードフォームを初期化:', subscriptionId);
+
+        const containerId = 'card-container-' + subscriptionId;
+        const formId = 'card-update-form-' + subscriptionId;
+
+        // 既に初期化済みかチェック
+        if (window.cardInstances && window.cardInstances[subscriptionId]) {
+            console.log('既に初期化済み:', subscriptionId);
+            return;
+        }
+
+        let payments;
+        let card;
+
+        try {
+            // Squareペイメントオブジェクトの初期化
+            payments = window.Square.payments(edelSquarePaymentParams.appId, edelSquarePaymentParams.locationId);
+
+            // カード入力フィールドの初期化
+            initializeCardForm();
+        } catch (e) {
+            console.error('Square初期化エラー:', e);
+            showCardError(subscriptionId, 'Square決済システムの初期化に失敗しました。');
+        }
+
+        async function initializeCardForm() {
+            try {
+                console.log('カード入力フィールドの初期化を開始します...', subscriptionId);
+
+                const cardContainer = document.getElementById(containerId);
+                if (!cardContainer) {
+                    console.error('card-container要素が見つかりません！', containerId);
+                    showCardError(subscriptionId, 'カードフォームのコンテナが見つかりません。');
+                    return;
+                }
+
+                // コンテナをクリア
+                cardContainer.innerHTML = '';
+                console.log('カードコンテナをクリアしました:', containerId);
+
+                // カードフォームを作成
+                card = await payments.card({
+                    style: {
+                        input: {
+                            color: '#333333',
+                            fontSize: '16px',
+                            fontFamily: 'sans-serif'
+                        },
+                        'input.is-focus': {
+                            color: '#000000'
+                        },
+                        'input.is-error': {
+                            color: '#cc0023'
+                        }
+                    }
+                });
+
+                console.log('カードオブジェクトを作成しました:', subscriptionId);
+
+                // カードフォームを指定のコンテナにアタッチ
+                await card.attach('#' + containerId);
+                console.log('カードフォームがアタッチされました:', containerId);
+
+                // カードインスタンスを保存
+                if (!window.cardInstances) {
+                    window.cardInstances = {};
+                }
+                window.cardInstances[subscriptionId] = card;
+
+                // フォーム送信イベントを設定
+                setupFormSubmission();
+            } catch (e) {
+                console.error('カードフォーム初期化エラー:', e);
+                showCardError(subscriptionId, 'カード入力フォームの初期化に失敗しました: ' + e.message);
+            }
+        }
+
+        function setupFormSubmission() {
+            const form = $('#' + formId);
+
+            // 既存のイベントを削除（重複防止）
+            form.off('submit.cardUpdate' + subscriptionId);
+
+            // フォーム送信イベント
+            form.on('submit.cardUpdate' + subscriptionId, async function (e) {
+                e.preventDefault();
+
+                const submitButton = form.find('.update-card-submit-button');
+                const originalText = submitButton.text();
+
+                // ボタンを無効化
+                submitButton.prop('disabled', true).text('処理中...');
+                clearCardError(subscriptionId);
+
+                try {
+                    // カードインスタンスを取得
+                    const cardInstance = window.cardInstances[subscriptionId];
+                    if (!cardInstance) {
+                        throw new Error('カードインスタンスが見つかりません');
+                    }
+
+                    // カードトークンを取得
+                    const result = await cardInstance.tokenize();
+
+                    if (result.status === 'OK') {
+                        console.log('トークン取得成功:', result.token);
+
+                        // トークンを隠しフィールドに設定
+                        $('#payment-token-' + subscriptionId).val(result.token);
+
+                        // AJAX処理を実行
+                        processCardUpdate(form, subscriptionId);
+                    } else {
+                        let errorMessage = 'カード情報を確認してください。';
+                        if (result.errors && result.errors.length > 0) {
+                            errorMessage = result.errors[0].message || errorMessage;
+                            console.log('バリデーションエラー:', result.errors);
+                        }
+                        showCardError(subscriptionId, errorMessage);
+
+                        // ボタンを再有効化
+                        submitButton.prop('disabled', false).text(originalText);
+                    }
+                } catch (error) {
+                    console.error('トークン取得エラー:', error);
+                    showCardError(subscriptionId, 'カード情報の処理中にエラーが発生しました: ' + error.message);
+
+                    // ボタンを再有効化
+                    submitButton.prop('disabled', false).text(originalText);
+                }
+            });
+        }
+    }
+
+    // エラーメッセージ表示
+    function showCardError(subscriptionId, message) {
+        const errorContainer = $('#card-errors-' + subscriptionId);
+        errorContainer
+            .html(
+                '<div class="error-message" style="color: #cc0023; margin: 10px 0; padding: 10px; border: 1px solid #cc0023; border-radius: 4px; background-color: #ffeaea;">' +
+                    message +
+                    '</div>'
+            )
+            .show();
+    }
+
+    // エラーメッセージクリア
+    function clearCardError(subscriptionId) {
+        $('#card-errors-' + subscriptionId)
+            .empty()
+            .hide();
+    }
+
+    // AJAX処理
+    function processCardUpdate(form, subscriptionId) {
+        // フォームから直接値を取得
+        const subscriptionIdValue = form.find('input[name="subscription_id"]').val();
+        const paymentTokenValue = form.find('input[name="payment_token"]').val();
+        const nonceValue = form.find('input[name="card_update_nonce"]').val();
+
+        console.log('AJAX処理開始:', subscriptionId);
+        console.log('送信パラメータ:');
+        console.log('- subscription_id:', subscriptionIdValue);
+        console.log('- payment_token:', paymentTokenValue);
+        console.log('- nonce:', nonceValue);
+
+        // パラメータ検証
+        if (!subscriptionIdValue) {
+            showCardError(subscriptionId, 'サブスクリプションIDが取得できませんでした。');
+            return;
+        }
+
+        if (!paymentTokenValue) {
+            showCardError(subscriptionId, 'カード情報のトークンが取得できませんでした。');
+            return;
+        }
+
+        if (!nonceValue) {
+            showCardError(subscriptionId, 'セキュリティトークンが取得できませんでした。');
+            return;
+        }
+
+        $.ajax({
+            url: edelSquarePaymentParams.ajaxUrl,
+            type: 'POST',
+            data: {
+                action: 'edel_square_update_card',
+                subscription_id: subscriptionIdValue,
+                payment_token: paymentTokenValue,
+                card_update_nonce: nonceValue
+            },
+            dataType: 'json',
+            success: function (response) {
+                console.log('カード更新API応答:', response);
+
+                if (response.success) {
+                    // 成功メッセージを表示
+                    clearCardError(subscriptionId);
+                    const successMessage =
+                        '<div class="success-message" style="color: #155724; margin: 10px 0; padding: 10px; border: 1px solid #46b450; border-radius: 4px; background-color: #ecf7ed;">' +
+                        response.data.message +
+                        '</div>';
+                    $('#card-errors-' + subscriptionId)
+                        .html(successMessage)
+                        .show();
+
+                    // 2秒後にページをリロード
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    // エラーメッセージを表示
+                    const errorMessage = response.data || 'カード情報の更新に失敗しました。';
+                    showCardError(subscriptionId, errorMessage);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX エラー:', error);
+                showCardError(subscriptionId, '通信エラーが発生しました。しばらくしてから再度お試しください。');
+            },
+            complete: function () {
+                // ボタンを再有効化
+                form.find('.update-card-submit-button').prop('disabled', false).text('更新');
+            }
+        });
+    }
+
+    // デバッグ用：DOM確認
+    function debugCardForm(subscriptionId) {
+        console.log('=== DEBUG INFO ===');
+        console.log('Subscription ID:', subscriptionId);
+        console.log('Card container element:', document.getElementById('card-container-' + subscriptionId));
+        console.log('Form container element:', document.getElementById('card-update-form-container-' + subscriptionId));
+        console.log('Square SDK:', typeof window.Square);
+        console.log('==================');
+    }
+
+    // ドキュメント読み込み完了後に初期化
+    $(document).ready(function () {
+        console.log('カード更新処理を初期化');
+        initializeCardUpdate();
+
+        // デバッグ用：フォームの存在確認
+        $('.card-update-form').each(function () {
+            const subscriptionId = $(this).find('input[name="subscription_id"]').val();
+            if (subscriptionId) {
+                console.log('発見されたカード更新フォーム:', subscriptionId);
+            }
+        });
     });
 });

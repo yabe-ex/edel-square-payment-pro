@@ -22,6 +22,7 @@ class EdelSquarePaymentProSettings {
             'sender_name' => get_bloginfo('name'),
             'sender_email' => get_bloginfo('admin_email'),
             'admin_email' => get_bloginfo('admin_email'),
+            'enable_onetime_payment_notification' => '1',
 
             // 同意チェックボックス設定
             'show_consent_checkbox' => '1',
